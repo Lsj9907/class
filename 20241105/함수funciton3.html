@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>함수function3</title>
+</head>
+
+<body>
+  <h1>return 키워드</h1>
+  <p>함수 안에서 선언된 변수나 값의 경우 외부에서 접근 불가능</p>
+  <ul>
+    <li>리턴 키워드를 이용해 호출한 곳으로 반환</li>
+    <li>함수 실행 후 결과를 다시 얻고자 할 때 사용</li>
+    <li>함수 종료를 위해 사용</li>
+  </ul>
+
+  <script>
+    function 과일() {
+        console.log('사과');
+    }
+    과일();
+    console.log;
+    const fruits = function () {
+        // 'apple'; 함수 호출시 함수 내에서만 데이터를 가지기 때문에 undefined
+        // return 'apple'; 호출한 곳으로 데이터를 반환 후 함수 종료
+        return ['사과', '귤', '무화과'];
+    }
+    console.log(fruits());
+  </script>
+</body>
+</html>

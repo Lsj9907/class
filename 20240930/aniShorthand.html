@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aniShorthand</title>
+    <style>
+        body {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        .wrapper .block {
+            background-color: maroon;
+            color: #fff;
+            width: 150px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            left: 150px;
+        }
+
+        .wrapper .box {
+            background: linear-gradient(0deg, rgba(255, 213, 226, 1) 36%, rgba(150, 126, 255, 1) 64%);
+            width: 150px; height: 150px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: 1s linear;
+            z-index: 999;
+            position: absolute;
+            top: 70px;
+
+
+            animation-name: ani1;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            animation-timing-function: ease-out;
+
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes ani1 {
+            from {
+                
+            } to {
+                transform: translateX(calc(98vw - 150px)) rotate(1080deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>animation 축약형</h1>
+    <div class="wrapper">
+        <div class="box">
+            <p>축약형</p>
+        </div>
+        <div class="block">block</div>
+    </div>
+</body>
+
+</html>

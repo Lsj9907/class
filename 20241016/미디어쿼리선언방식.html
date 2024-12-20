@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>미디어쿼리 선언 방식</title>
+    <style>
+        html {
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1{
+            background-color: #52616B;
+            color: #fff;
+            margin: 0;
+            padding: 2rem;
+        }
+        h2 {
+            background-color: #A5C9CA;
+            color: #fff;
+            margin: 0;
+            padding: 1rem;
+        }
+        .container {
+            height: 40vh;
+            margin: 0 auto;
+            display: grid;
+            grid-auto-flow: 1fr;
+        }
+        .box1 { background-color: #F8E8EE;}
+        .box2 { background-color: #FDCEDF;}
+        .box3 {background-color: #F2BED1;}
+
+        @media (min-width: 768px) {
+            .container {
+                display: grid;
+                width: 70%;
+            }
+        } 
+        @media screen and (width >= 1200px) {
+            .container {
+                display: grid;
+                width: 70%; height: 20vh;
+                grid-template-columns: repeat(3,1fr);
+            }
+            h2 {
+                position: absolute;
+                color: transparent;
+                background-color: transparent;
+                z-index: 9999px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>미디어쿼리<strong>선언방식</strong></h1>
+    <h2>내부선언과<br>외부선언</h2>
+    <div class="container">
+      <div class="box box1">box1</div>
+      <div class="box box2">box2</div>
+      <div class="box box3">box3</div>
+    </div>
+</body>
+</html>

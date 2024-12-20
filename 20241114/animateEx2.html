@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>animateEx2</title>
+    <style>
+        .container {
+            width: 80vw;
+            min-width: 400px;
+            margin: 50px auto;
+            border: 3px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+        .container .btns-group {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            z-index: 999;
+        }
+        .container .btns-group li {
+            background-color: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+            width: 20px; height: 20px;
+            text-indent: -9999px;
+            margin: 6px;
+            border-radius: 50%;
+        }
+        .container .btns-group li:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .container .imgs-group {
+            display: flex;
+            outline: 3px solid rgba(0, 0, 0, 0.5);
+            width: 400%; /* li > img의 갯수. .container의 4배 값을 줌*/
+            position: relative;
+        }
+        .container .imgs-group li {
+            width: 25%; /* 부모인 ul을 기준으로 1/4을 차지해야하므로 */
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <script src="../assets/scripts/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="btns-group">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ul class="imgs-group">
+            <li><img src="https://placehold.co/600x400/F6E5F5/222/?text=img1" alt="img1"></li>
+            <li><img src="https://placehold.co/600x400/FBF4F9/222/?text=img2" alt="img2"></li>
+            <li><img src="https://placehold.co/600x400/F6E7E6/222/?text=img3" alt="img3"></li>
+            <li><img src="https://placehold.co/600x400/B9CCED/222/?text=img4" alt="img4"></li>
+        </ul>
+    </div>
+    <script>
+        /*
+            첫번째 버튼을 킬릭하면 첫번째 이미로 이동. left, marginLeft 
+            두번째 버튼을 킬릭하면 두번째 이미로 이동.
+        */
+       /*
+       $('.btns-group li').eq(0).on('click', function(){
+        $('.imgs-group').animate({left:0}, 300, 'easeInOutElastic');
+       });
+       $('.btns-group li').eq(1).on('click', function(){
+        $('.imgs-group').animate({left: '-100%'}, 300, 'easeInOutExpo');
+       });
+       */
+      $('.btns-group li').on('click', function(){
+        const idx = $(this).index();
+        $('.imgs-group').animate({marginLeft: -100 * idx +'%'}, 300, 'easeInOutExpo');
+      })
+    </script>
+</body>
+</html>

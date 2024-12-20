@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>animateEx5</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ddd;
+        }
+
+        .container {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .nav-wrapper {
+            width: 160px;
+            height: 100%;
+            background-color: orange;
+            position: fixed;
+            left: -160px;
+            transition: 0.4s;
+            z-index: 99;
+        }
+
+        .nav-wrapper .toggle-btn {
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            border: 1px solid #222;
+            border-left: none;
+            padding: 6px 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            /* 가장 가까운 부모요소의 포지션을 기준으로 정렬 */
+            top: 20px;
+            left: 100%;
+            z-index: 999;
+        }
+
+        .nav-wrapper .side-menu {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-right: 1px solid #222;
+            box-sizing: border-box;
+            margin: 0;
+            padding-top: 100px;
+            line-height: 5;
+        }
+
+        .container.active .nav-wrapper {
+            left: 0;
+        }
+
+        .container.active main {
+            transform: translateX(160px);
+        }
+
+        main {
+            height: 300vh;
+            background-color: #EBEAFF;
+            transition: 0.4s;
+            text-align: center;
+            padding-top: 200px;
+            font-size: 3rem;
+            z-index: 9;
+            position: relative;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-wrapper">
+            <a href="#" class="toggle-btn">☰</a>
+            <ul class="side-menu">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>contents</h2>
+        </main>
+    </div>
+    <script>
+        /*
+        css의 transition과 함께 사용하는 경우 움직임이 부드자연스러움
+        let isToggle = false;
+        $('.toggle-btn').on('click', function(){
+            $('.nav-wrapper').animate({
+                left: isToggle ? '-160px' : '0px',
+            });
+            $('main').animate({
+                marginLeft: isToggle ? '0px' : '160px'
+            });
+            isToggle = !isToggle;
+        });
+        */
+        $('.toggle-btn').on('click', function () {
+            /*
+            $('.nav-wrapper').toggleClass('active');
+            $('main').toggleClass('active');
+            $('aside').toggleClass('active');
+            */
+           $('.container').toggleClass("active");
+        });
+    </script>
+</body>
+
+</html>

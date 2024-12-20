@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>switchEx2</title>
+  <style>
+    img {
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>switchEx2</h1>
+  <script>
+    /* 
+      1~4 사이의 숫자를 입력하면 해당 번호의 이미지 출력
+      취소 버튼 클릭시 취소했습니다 출력
+    */
+    const num = prompt('1~4번까지의 숫자를 입력하세요');
+    let pic = '';
+
+    switch (num) {
+      case null:
+        document.body.innerHTML += `<h2>취소 되었습니다<h2>`;
+        break;
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+        pic = `<img src="./images/background-7842730_640.jpg" alt="img${num}1">`;
+        break;   
+      default :
+        document.body.innerHTML += `<h2>해당 번호만 입력해 주세요<h2>`;
+    }
+
+    if(pic) document.body.innerHTML += pic;
+  </script>
+</body>
+</html>

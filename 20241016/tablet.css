@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+html {
+    font-size: 17px;
+}
+
+h1 {
+    background-color: #433878;
+}
+
+h1 strong {
+    display: inline;
+}
+
+h2 {
+    background-color: #7E60BF;
+}
+.container {
+    width: 70vw;
+    margin: 0 auto;
+}
+.container .box1 {background-color: #E5D9F2;}
+.container .box2 {background-color: #CDC1FF;}
+.container .box3 {background-color: #A594F9;}

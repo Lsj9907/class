@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM객체1_탐색</title>
+  <style>
+    ul {
+      border: 2px solid #000;
+      padding: 20px;
+      margin: 20px;
+    }
+    .gnb {
+      color: teal;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title"></h1>
+  <h2>Document Object Model</h2>
+  <h3>문서의 구조화된 표현으로 스크립트 및 프로그래밍 언어와 페이지를 연결</h3>
+  <p>문서의 구조, 스타일, 콘텐츠를 변경</p>
+
+  <ul class="box">
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction" target="_blank">DOM 소개</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model" target="_blank">문서 객체 모델(DOM)</a></li>
+    <li><a href="https://ko.javascript.info/browser-environment#ref-888" target="_blank">javascript.info</a></li>
+  </ul>
+
+  <ul class="gnb">
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+  </ul>
+
+  <script>
+    // id 속성 노드 탐색 document.getElementById('id');
+    document.getElementById('title').textContent = 'DOM 객체';
+
+    /*
+    document.getElementsByClassName('class');
+    document.getElementsByTagName('li');
+    유사 배열(NodeList) 형태로 반환 -> [li, li, li, li]
+      ㄴ 배열은 아니지만 배열처럼 처리할 수 있는 객체로 숫자로 된 key와 length 프로퍼티(속성)가 있음
+      NodeList는 .forEach() 사용 가능 .map(), .filter() 등의 배열 메서드는 사용 불가능 <- 배열이 아니기 때문에
+    */
+
+    // console.log(document.getElementsByClassName('box')); -> ['box']
+    document.getElementsByClassName('box')[0].style.borderColor = 'red';
+
+    const lists = document.getElementsByClassName('list');
+    console.log(lists); // li.list, li.list, li.list, li.list]
+
+    lists[0].style.backgroundColor = 'teal';
+
+    lists.array.forEach(element => {
+        
+    });
+  </script>
+</body>
+</html>

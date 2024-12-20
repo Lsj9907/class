@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>animate1</title>
+  <style>
+    .box {
+      width: 100px; height: 100px;
+      background-color: lightskyblue;
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>animate()</h1>
+  <p><a href="https://api.jquery.com/animate/" target="_blank">공식문서</a></p>
+  <button class="btn">클릭</button>
+
+  <div class="box">제이쿼리 애니메이션</div>
+
+  <script>
+    $('.btn').on('click', function () {
+      // .animate({ 속성:값, 속성:값, 속성:값 }[,진행시간, 움직임 형태, ...]);
+      $('.box').animate({
+        'width': '300px',
+        height: 300,
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        color: 'maroon',
+        backgroundColor: '#9CDBA6'
+      }, 1500);
+    })
+  </script>
+</body>
+</html>

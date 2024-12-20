@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event4-이벤트제어</title>
+    <style>
+        h2,
+        a {
+            border: 3px solid #000;
+            padding: 50px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>이벤트 제어</h1>
+    <h2><a href="https://naver.com" target="" _blank>네이버 바로가기</a></h2>
+
+    <script>
+        // $h2, $link
+        const $h2 = document.querySelector('h2');
+        const $link = document.querySelector('a');
+
+        $h2.addEventListener('click', () => $h2.style.backgroundColor = 'orange');
+
+        $link.addEventListener('click', (event) => { // e, evt js가 미리 만들어 놓은 이벤트 객체를 함수 내에서 쓰기 위해 매개변수로 사용
+            event.stopPropagation(); //현재 이벤트가 상위 노드까지 전달되는 것을 방지. 이벤트 버블링 방지
+            event.preventDefault(); // 요소의 기본성격 제거 (a: 이동, 페이지 제일 위로 이동x, button, input: 새로고침 x)
+
+            $link.style.backgroundColor = 'tomato'
+        });
+    </script>
+</body>
+
+</html>

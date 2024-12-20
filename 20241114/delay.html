@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>delay</title>
+    <style>
+        .container {display: flex;}
+        .container .box {width: 100px; height: 100px; opacity: 0.4; margin: 10px;}
+        #box1 {background-color: #E7CCCC;}
+        #box2 {background-color: #EDE8DC;}
+        #box3 {background-color: #A5B68D;}
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>delay()</h1>
+    <p>애니메이션 대기 후 실행</p>
+    <div class="container">
+        <div id="box1" class="box">box1</div>
+        <div id="box2" class="box">box2</div>
+        <div id="box3" class="box">box3</div>
+    </div>
+    <script>
+        $('#box1').delay('slow').animate({marginTop: 150, opacity: 1}, 1000, 'linear');
+        $('#box2').delay(1000).animate({marginTop: 250, opacity: 1}, 1000, 'linear');
+        $('#box3').delay(1500).animate({marginTop: 350, opacity: 1}, 1000, 'linear');
+    </script>
+</body>
+</html>

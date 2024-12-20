@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>kakaoAPI1</title>
+  <style>
+    ul {
+      list-style: none;
+      margin: 10px;
+      padding: 20px
+    }
+
+    ul li {
+      border-bottom: 1px solid #000;
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>kakao API - 책 검색</h1>
+  <ul id="kakao"></ul>
+
+  <script>
+    // 카카오 책 검색 https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book
+    const URL = "https://dapi.kakao.com/v3/search/book?target=title&query=한강";
+    const KAKAO_API_KEY = "83f7cb6d2b127a0e741d16c395e85713";
+
+    $.ajax({
+      url: URL,// 데이터를 가져올 주소
+      dataType: "json",// 문서 타입
+      method: "GET",// 데이터 전달 방식
+      //data : {}, 보낼 데이터
+      headers: { Authorization: `KakaoAK ${KAKAO_API_KEY}` }// 인증
+    }).done(function (data) {
+      // console.log(data.documents[0].title);
+
+      data.documents.forEach(function (item) {
+        let li = $('<li>');
+        $('<h3>').text(item.title).appendTo(li);
+        $('<p>').text(item.contents.substring(0, 60)).appendTo(li);
+        $('<img>').attr({ 'src': item.thumbnail, 'alt': item.title }).appendTo(li)
+        $('#kakao').append(li);
+      });
+    });
+  </script>
+</body>
+
+</html>

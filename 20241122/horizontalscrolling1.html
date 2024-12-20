@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>horizontalScrolling1</title>
+  <style>
+    body, h1m ,h2 { margin: 0; }
+    body * { box-sizing: border-box; }
+    main { display: flex; height: 100vh; text-align: center; overflow-x: auto; white-space: nowrap; }
+    section { width: 100%; flex-shrink: 0; color:#E2F1E7 }
+    section:nth-child(1) { background-color: #243642; }
+    section:nth-child(2) { background-color: #387478; }
+    section:nth-child(3) { background-color: #629584; }
+    section:nth-child(4) { background-color: #CB6040; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1>horizontal scrolling</h1>
+      <h2>section1</h2>
+    </section>
+    <section>
+      <h2>section2</h2>
+    </section>
+    <section>
+      <h2>section3</h2>
+    </section>
+    <section>
+      <h2>section4</h2>
+    </section>
+  </main>
+
+  <script>
+    /*
+      https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
+
+      addEventListener("wheel", (event) => {});
+    */
+
+    const main = document.querySelector('main');
+
+    // main.addEventListener('wheel', (evt) => {
+    //   evt.preventDefault();
+    //   main.scrollLeft += evt.deltaY;
+    // });
+
+    const scrolled = (evt) => {
+      evt.preventDefault();
+      main.scrollLeft += evt.deltaY;
+    }
+
+    main.addEventListener('wheel', scrolled);
+  </script>
+</body>
+</html>

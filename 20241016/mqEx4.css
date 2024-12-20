@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* "Emilys Candy", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: "Emilys Candy",Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 1.9rem;
+    text-transform: capitalize;
+    background: url(./images/252_693_143.jpg) fixed no-repeat 50% / cover;
+    color: #fff;
+}
+
+.menu-wrapper .global-menu {
+    display: none;
+}
+.menu-wrapper .global-menu.active {
+    display: grid;
+}
+.menu-wrapper a {
+    display: block;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+}
+.menu-wrapper .mobile-btn {
+    background: rgba(32, 62, 96, 0.9) url(./images/more_vert_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg) no-repeat 100% 50% / 40px;
+}

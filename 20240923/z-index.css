@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+body{
+    margin: 0;
+    line-height: 1.6;
+    height: 300vh;
+    color: #fff;
+}
+ul{
+    list-style: none;
+    padding: 0; margin: 0;
+}
+
+.container{
+    background-color: #405D72;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 9999;
+}
+.container ul{
+    background-color: #758694;
+    text-align: left;
+    padding: 20px;
+    width: 60%;
+    margin: 20px auto;
+    /* z-index: 9999; 포지션, 플레스, 그리드가 없으면 적용되지 않음 */
+}
+
+.wrapper{
+    background-color: #D8D2C2;
+
+    width: 400px; height: 400px;
+    margin: 300px auto;
+    position: relative;
+}
+
+.wrapper .box{
+    width: 200px; height: 200px;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+}
+.wrapper .box1 {
+    background-color: #5F6F65;
+    top: 10px; left: 10px;
+    z-index: 1000;
+}
+.wrapper .box2 {
+    background-color: #808D7C;
+    top: 40px; left: 40px;
+    z-index: 100;
+}
+.wrapper .box3 { 
+    background-color: #9CA986;
+    top: 70px; left: 70px;
+    z-index: 10;
+}
+.wrapper .box4 { 
+    background-color: #C9DABF;
+    top: 100px; left: 100px;
+    z-index: 1;
+}

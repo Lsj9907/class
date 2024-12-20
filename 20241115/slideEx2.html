@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>slideEx2</title>
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <style>
+        .simple-slide {
+            width: 100%;
+            margin: 0 auto;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .simple-slide .slide-wrapper {
+            display: flex;
+            width: 400%;
+            height: 100%;
+        }
+
+        .simple-slide .slide-wrapper .slide-item {
+            text-indent: -999%;
+            width: 100%;
+            height: 100%;
+            background: no-repeat 50%/ cover;
+        }
+
+        .simple-slide .slide-wrapper #bg1 {
+            background-image: url(https://placehold.co/1000x600/F2C6B4/fff/?text=bg1);
+        }
+
+        .simple-slide .slide-wrapper #bg2 {
+            background-image: url(https://placehold.co/1000x600/99E1E5/fff/?text=bg2);
+        }
+
+        .simple-slide .slide-wrapper #bg3 {
+            background-image: url(https://placehold.co/1000x600/F3E8CB/fff/?text=bg3);
+        }
+
+        .simple-slide .slide-wrapper #bg4 {
+            background-image: url(https://placehold.co/1000x600/FBAFAF/fff/?text=bg4);
+        }
+
+        .simple-slide .slide-button {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .simple-slide .slide-button .btn {
+            background-color: rgba(255, 255, 255, 0.5);
+            font-size: 0;
+            width: 40px;
+            height: 8px;
+            margin: 0 6px;
+            cursor: pointer;
+        }
+
+        .simple-slide .slide-button .btn.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- 사용자가 보는 화면 -->
+    <div class="simple-slide">
+        <!-- 이미지가 나열되는 영역 -->
+        <ul class="slide-wrapper">
+            <li class="slide-item active" id="bg1">bg1</li>
+            <li class="slide-item" id="bg2">bg2</li>
+            <li class="slide-item" id="bg3">bg3</li>
+            <li class="slide-item" id="bg4">bg4</li>
+        </ul>
+        <ul class="slide-button">
+            <li class="btn active">button1</li>
+            <li class="btn">button2</li>
+            <li class="btn">button3</li>
+            <li class="btn">button4</li>
+        </ul>
+    </div>
+    <script>
+        const $slideBtn = $('.simple-slide .slide-button .btn');
+        const $slideWrapper = $('.simple-slide .slide-wrapper');
+        const $slideItem = $('.simple-slide .slide-wrapper .slide-item');
+    
+        let idx = 0;
+        const slideCount = $slideItem.length;
+    
+        // 1. pagenation을 클릭했을 때 슬라이드 이동 
+        $slideBtn.on('click', function() {
+          idx = $(this).index();
+          moveSlide(idx);// 슬라이드 이동
+          resetSlide();// 슬라이드가 이동이 되고나면 리셋 -> 자동 슬라이드 리셋
+        });
+    
+        function moveSlide(index) {
+          $slideWrapper.stop().animate({
+            marginLeft: -100 * index + '%'
+          },800);
+    
+          // 내가 클릭한 버튼에 active
+          $slideBtn.removeClass('active').eq(index).addClass('active');
+        }
+    
+        function resetSlide() {
+          clearInterval(startSlide);// 메모리를 비우고 
+          setInterval(startSlide, 3000);// 재시작
+        }
+    
+        // 2. 자동 슬라이드
+        function startSlide() {
+          idx = (idx + 1) % slideCount;// 0,1,2,3,0,1...
+          moveSlide(idx);
+        }
+    
+        let autoSlide = setInterval(startSlide, 3000);
+    
+        function resetSlide() {
+          clearInterval(autoSlide);// 메모리를 비우고 
+          autoSlide = setInterval(startSlide, 3000);// 재시작
+        }
+    
+        /* 마우스를 슬라이드 위에 올리면 멈추고, 떼면 다시 실행
+        $('.simple-slide').on({
+          'mouseenter': function() { clearInterval(autoSlide) } ,
+          'mouseleave': function() { autoSlide = setInterval(startSlide, 3000) }
+        });
+        */
+        $('.simple-slide').hover(
+          function() {// == 'mouseenter'
+            clearInterval(autoSlide)
+          }, function() {// == 'mouseleave'
+            autoSlide = setInterval(startSlide, 3000)
+          }
+        )
+      </script>
+</body>
+
+</html>

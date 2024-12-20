@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>중첩if문Ex</title>
+</head>
+
+<body>
+  <script>
+    const defaultId = 'web';
+    const defaultPw = 1234;// 숫자 자료형
+
+    const userId = prompt('아이디를 입력하세요');
+
+    if(userId === defaultId) {// 아이디를 입력받아 일치하면
+      alert('아이디가 일치합니다');// 아이디가 일치합니다 알림 후 
+
+      let userPw = prompt('비밀번호를 입력하세요');// 비밀번호 입력창을 띄어 
+      userPw = Number(userPw);
+      
+      if(userPw === defaultPw) {// 입력받은 비밀번호와 비교하여
+        alert('로그인 되었습니다');  // 일치하면 로그인 되었습니다
+      } else {// 일치하지 않으면 비밀번호가 틀렸습니다 출력
+        alert('비밀번호가 틀렸습니다');
+      }
+    
+    } else {// 아이디가 일치하지 않으면 아이디가 틀렸습니다 출력 
+      alert('아이디가 틀렸습니다');
+    }
+    
+  </script>
+</body>
+</html>

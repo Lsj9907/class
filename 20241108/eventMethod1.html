@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>eventMethod1</title>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+  <script>
+    // 문서 준비 이벤트
+    $(document).ready(function () {
+      // ol노드 탐색 후 border, line-height
+      $('ol').css({
+        border: '3px solid #000',
+        padding: 20,
+        fontSize: '1.2rem',
+        lineHeight: 1.5,
+        margin: 20
+      });
+
+      /* JS
+      document.querySelector('h1').addEventListener('click', (e) => {
+        e.target.style.backgroundColor = 'lightblue';
+      });
+      */
+      $('h1').on('click', function() {
+        // 일반 함수에서만 사용할 수 있는 this 키워드. 내가 클릭한 그 h1
+        $(this).css({'background-color' : 'lightblue'});
+      });
+
+      // .eq(인덱스번호); 인덱스번호로 탐색
+      $('li').eq(0).on('click', (evt) => {
+        // 화살표 함수에서 사용하는 evt.target 속성은 내가 클릭한 그 li
+        $(evt.target).css({ backgroundColor: '#A0D683'});
+      });
+
+      $('li').eq(1).on('dblclick', (event) => $(event.target).css({backgroundColor:'orange'}));
+
+      $('li').eq(2).on('mouseover', (e) => {// 하위 노드에 영향을 줌
+        $(e.target).css({ backgroundColor:'#CDC1FF' });
+      });
+      $('li:eq(2)').on('mouseout', (e) => {// 하위 노드에 영향을 줌
+        $(e.target).css({ backgroundColor:'transparent' });
+      });
+
+      $('li').eq(3).on('mouseenter', (e) => {// 하위 노드에 영향을 주지 않음
+        $(e.target).css({ backgroundColor:'#FF6600' });
+      });
+      $('li').eq(3).on('mouseleave', (e) => {// 하위 노드에 영향을 주지 않음
+        $(e.target).css({ backgroundColor:'transparent' });
+      });
+
+      $('li').eq(5).on({
+        'mouseenter' : (e) => { $(e.target).css({ backgroundColor: '#CB80AB' }) },
+        'mouseleave' : (e) => { $(e.target).css({ backgroundColor: 'transparent' }) },
+        'click' : (e) => { $(e.target).css({ color: 'red' }) },
+        'dblclick' : (e) => { $(e.target).css({ color: '#000', 'user-select':'none' }) }
+      });
+
+      // .hover(function(){마우스를 올렸을 때}, function(){마우스가 벗어났을때})
+      $('li').last().hover((e) => {
+        $(e.target).css({ backgroundColor: 'salmon' });
+      }, (e)=>{
+        $(e.target).css({ backgroundColor: 'transparent' });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Event Method 1</h1>
+  <p><a href="https://api.jquery.com/category/events" target="_blank">Events</a></p>
+  <ol>
+    <li>click</li>
+    <li>dblclick</li>
+    <li>mouseover</li>
+    <li>mouseenter</li>
+    <li>mouseout</li>
+    <li>mouseleave</li>
+    <li>hover: 마우스를 객체 위에 올렸을 때와 벗어났을 때. jQuery 전용</li>
+  </ol>
+
+  <p>
+    <strong>이벤트 적용시</strong>
+    <pre>
+      $().on('이벤트명', function(){});
+    </pre>
+
+    <strong>여러 이벤트 적용시</strong>
+    <pre>
+      $().on({
+        'mouseenter': function () {},
+        'mouseleave': function () {},
+        '이벤트명': function () {}
+      })
+    </pre>
+  </p>
+</body>
+</html>

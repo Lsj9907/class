@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>fadeIn+fadeOut+fadeToggle</title>
+  <style>
+    .box {
+      list-style: none;
+      margin: 0; padding: 0;
+      text-align: center; font-weight: bold;
+    }
+    .box li {
+      width: 150px; height: 150px;
+      color: #E8BCB9
+    }
+    .box li:nth-child(1) { background-color: #432E54; }
+    .box li:nth-child(2) { background-color: #4B4376; }
+    .box li:nth-child(3) { background-color: #AE445A; }
+    .box li:nth-child(4) { background-color: #526E48; }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('#btn2').click(function() {
+        // == display: none
+        $('li').eq(0).fadeOut();// 서서히 사라짐. 기본값 0.4s
+        $('li').eq(1).fadeOut(700);// 0.7초
+        $('li').eq(2).fadeOut('slow');
+        $('li').eq(3).fadeOut(2500);
+      });
+
+      $('#btn1').click(function() {
+        $('li').eq(0).fadeIn();// 서서히 나타남
+        $('li').eq(1).fadeIn('fast');// 0.7초
+        $('li').eq(2).fadeIn(2000);
+        $('li').eq(3).fadeIn(3000);
+      });
+
+      const speeds = [ null, 600, 1200, 1800 ];
+      $('#btn3').on('click', () => {
+        $('li').each(function(idx) {
+          // $('li').fadeToggle(speeds[idx]); 모든 li
+          $(this).fadeToggle(speeds[idx]);
+        })
+      })
+    });
+
+    /* 
+      https://api.jquery.com/each
+      https://api.jquery.com/jQuery.each
+
+      선택 요소에 대해 순차적으로 함수 실행. 반복 메서드
+      js의 array.forEach((배열의 각 요소[, 인덱스]) => {})와 비슷한 메서드
+
+      $().each(인덱스[, 요소]);
+      $.each();
+    */
+  </script>
+</head>
+
+<body>
+  <h1>.fadeIn() .fadeOut() .fadeToggle()</h1>
+  <button class="btn" id="btn1">.fadeIn()</button>
+  <button class="btn" id="btn2">.fadeOut()</button>
+  <button class="btn" id="btn3">.fadeToggle()</button>
+
+  <ul class="box">
+    <li>box1</li>
+    <li>box2</li>
+    <li>box3</li>
+    <li>box4</li>
+  </ul>
+</body>
+</html>

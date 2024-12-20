@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gridEX2</title>
+    <style>
+        body {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .wrapper {
+            width: 80%; height: 60vh;
+            margin: 50px auto;
+            border: 6px solid #000;
+            display: grid;
+            /* grid-template-rows: 100px 1fr 50px; */
+            grid-auto-rows: 100px 1fr 50px;
+        }
+        header {
+            background-color: #E5DDC5;
+        }
+        .contents {
+            background-color: #BED7DC;
+        }
+        footer {
+            background-color: #E7CCCC;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>header-고정</header>
+        <div class="contents">contents-가변(컨텐츠의 크기에 따라 높이값 변경)</div>
+        <footer>footer-고정</footer>
+    </div>
+</body>
+</html>

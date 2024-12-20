@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/**** fonts ****/
+/* 'Pretendard Variable' */
+@import url(./pretendardvariable.css);
+/*  
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+/**** css 변수 ****/
+/* 전역 변수 */
+:root {/* 선언(설정) */
+  --font-main-ko : "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-main-en: "Montserrat", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", Arial, sans-serif;
+
+  --font-main-title-xxlg: 2.4rem;
+  --font-main-title-xlg: 2.1rem;
+  --font-main-title-lg: 1.5rem;
+  --font-main-title-md: 1.25rem;
+  --font-main-title-sm: 0.95rem;
+
+  --color-primary: #69a9c5;
+
+  --bg-gray-light: #e9ecef;
+  --bg-gray-dark: #adb5bd;
+
+  --color-white: #fff;
+  --color-smooth-black: #222;
+
+  --border-btm-gray: 1px solid var(--bg-gray-dark);
+
+  --spacing-xlg: 2.5rem;/* 40px */
+  --spacing-lg: 2.125rem; /* 34px */
+  --spacing-md: 1.25rem; /* 20px */
+  --spacing-sm: 1.125rem; /* 18px */
+  --spacing-xsm: 0.625em; /* 10px */
+}
+
+/**** global style ****/
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+/* 드래그 */
+html ::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+/* 스크롤바 */
+html ::-webkit-scrollbar {
+  width: 8px;
+}
+html ::-webkit-scrollbar-track {
+  background-color: var(--bg-gray-light);
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 10px var(--bg-gray-dark);
+  border: 1px solid var(--bg-gray-dark)
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+.grid-container {
+  display: grid;
+}
+.margin-sm {
+  margin: 0 var(--spacing-sm);
+}
+.margin-md {
+  margin: 0 var(--spacing-md);
+}
+.margin-lg {
+  margin: 0 var(--spacing-lg);
+}
+.padding-sm {
+  padding: 0 var(--spacing-sm);
+}
+.padding-md {
+  padding: 0 var(--spacing-md);
+}
+.padding-lg {
+  padding: 0 var(--spacing-lg);
+}
+
+.main-title {
+  font-family: var(--font-main-en);
+  font-size: var(--font-main-title-xlg);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 70px;
+}
+.main-title::after {
+  content: "";
+  display: block;
+  width: 50px; height: 2px;
+  background-color: var(--color-smooth-black);
+  margin: 20px auto;
+}
+.main-des {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.ghost-btn {
+  border: 2px solid var(--color-white);
+  padding: 10px 20px;
+  margin: 50px;
+  font-weight: 600;
+  font-size: var(--font-main-title-md);
+  place-self: center;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/**** body ****/
+body {
+  /* css 변수 적용 var() */
+  font-family: var(--font-main-ko);
+  color: var(--color-smooth-black);
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-transform: capitalize;
+}
+
+
+/* 1020px 이상일 때 */
+@media (min-width:1020px) {
+  :root {
+    --font-main-title-xxlg: 3.5rem;
+    --font-main-title-xlg: 3rem;
+    --font-main-title-lg: 1.7rem;
+    --font-main-title-md: 1.5rem;
+    --font-main-title-sm: 0.95rem;
+
+    --spacing-5xlg: 6.6666rem;/* 120px */
+    --spacing-5xlg: 2rem;/* 36px */
+    --spacing-xsm: 1.11111rem;/* 20px */
+  }
+  html {
+    font-size: 18px;
+  }
+  .main-title {
+    margin-top: var(--spacing-5xlg);
+  }
+}

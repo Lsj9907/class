@@ -1,0 +1,22 @@
+<script>
+    // 함수Ex1
+    /*
+     아메리카노는 4000원 입니다 출력
+     라떼는 4500원 입니다 출력
+    */
+    // 함수 표현식으로
+    const coffee = function (drink1, drink2 = '물') {
+        console.log(`${drink1}는 4000원 입니다`);
+        console.log(`${drink2}는 4500원 입니다`);
+    }
+
+    coffee('아메리카노', '라떼'); // 함수 호출
+    coffee('녹차'); // 함수 호출
+
+    const drink = function(item="", price=0) {
+        console.log(`${item}의 가격은 ${price.toLocaleString()}입니다.`)
+    }
+
+    drink('아메리카노', 4000); // 아메리카노의 가격은 4000원 입니다.
+    drink('라떼', 4500); // 아메리카노의 가격은 4500원 입니다.
+</script>

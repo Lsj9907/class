@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>trasnformVSperspective</title>
+  <style>
+    h1,h2 {
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        border: 6px solid #000;
+        width: 90vw;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    ul li {
+        width: 20%;
+        aspect-ratio: 1 /1;
+        margin: 1%;
+        border: 3px solid #000;
+    }
+    .box1 li {
+        background-color: #DEE5D4;
+        /* transfrom: perspective(); 원근감을 주고자 하는 대상에 직접 적용 */
+        transform:  perspective(40vw) rotateX(45deg);
+    }
+    .box2 {
+        perspective: 40vw;
+    }
+    .box2 li {
+        background-color: #BED7DC;
+        transform: rotateX(45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>trasnform VS perspective</h1>
+  <h2>trasnform: perspective()</h2>
+  <ul class="box1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+  </ul>
+  <h2>perspective</h2>
+  <ul class="box2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+  </ul>
+</body>
+</html>

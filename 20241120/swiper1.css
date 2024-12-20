@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* :root {} 전역변수 */
+
+/* main slide */
+
+.main-slide {
+    /* 지역변수 */
+    --swiper-navigation-color: #fff;
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-sides-offset : 40px;
+
+    width: 90vw;
+    height: 60vh;
+    margin: 0 auto 100px;
+    background-color: #ddd;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.main-slide .swiper-wrapper li {
+    background: no-repeat 50% / cover;
+}
+
+.main-slide .swiper-wrapper .bg1 {
+    background-image: url(https://placehold.co/1000x500/F5EEE6/fff/?text=pic1);
+}
+
+.main-slide .swiper-wrapper .bg2 {
+    background-image: url(https://placehold.co/1000x500/FFF8E3/fff/?text=pic1);
+}
+
+.main-slide .swiper-wrapper .bg3 {
+    background-image: url(https://placehold.co/1000x500/F3D7CA/fff/?text=pic1);
+}
+
+.main-slide .swiper-wrapper .bg4 {
+    background-image: url(https://placehold.co/1000x500/E6A4B4/fff/?text=pic1);
+}
+
+.main-slide .swiper-wrapper .bg-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    padding: 20px;
+    place-content: center;
+}
+
+.main-slide .swiper-wrapper .bg-box .title {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.main-slide .swiper-wrapper .bg-box .subtitle {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+.main-slide .swiper-wrapper .bg-box .text {
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* nav icon */
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 10px);
+}
+
+
+.swiper-button-prev:after, .swiper-rtl
+.swiper-button-next:after {
+    content: "👈";
+    background-color: blue;
+    width: 20px; height: 50px;
+}
+.swiper-button-next:after, .swiper-rtl
+.swiper-button-prev:after {
+    content: "👉";
+}
+
+.swiper-button-next:hover:after, .swiper-rtl:hover, .swiper-button-prev:hover:after {
+    transform: translateY(-6px);
+} 
+
+/* 숫자 pagination */
+.main-slide .main-page-no {
+    width: 80px; height: 80px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    top: 30px; left: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; align-items: center;
+    letter-spacing: 2px;
+  }
+  
+  /* sub-slide */
+  .sub-slide {
+    width: 50vw;
+    margin: 50px auto;
+    overflow: hidden;
+  }

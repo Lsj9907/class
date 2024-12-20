@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>html</title>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            // btn1을 클릭하면 ul의 텍스트 노드만 반환
+            $('#btn1').on('click', function () {
+                const txt = $('ul').text();// 기준 요소의 텍스트 노드만 반환
+                console.log(txt);
+            });
+
+            // btn2을 클릭하면 ul의 자식 노드만 반환
+            $('#btn2').on('click', function () {
+                const ht = $('ul').html();// 기준 요소 하위의 자식 노드 모두 리턴
+                console.log(ht);
+            });
+
+            $('li').eq(3).html('<strong>strong 태그로 변경</strong>');
+        });
+    </script>
+</head>
+
+<body>
+    <h1>.html()</h1>
+    <p>html 구조를 가져오거나 반환</p>
+
+    <button id="btn1">text()</button>
+    <button id="btn2">html()</button>
+
+    <ul>
+        <li><strong><em>메뉴1</em></strong></li>
+        <li><em>메뉴2</em></li>
+        <li>메뉴3</li>
+        <li><a href="#">메뉴4</a></li>
+        <li>메뉴5</li>
+    </ul>
+</body>
+
+</html>

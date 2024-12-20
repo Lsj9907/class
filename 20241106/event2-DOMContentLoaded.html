@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>event2-DOMContentLoaded</title>
+  <script>
+    // 1
+    // const txt = '제목';
+    // const h1 = `<h1>${txt}</h1>`;
+
+    const write = (txt) => {
+      return `<h2>${txt}번째</h2>`;
+    }
+
+    /* DOM을 불러오기 전에 호출하므로 에러
+    document.body.innerHTML = `<h2>내용출력</h2>`;
+    document.body.innerHTML = write(1);
+    
+    문서 준비 이벤트는 DOM을 만들고 나서 실행하기 때문에 제일 마지막에 반환
+    DOM, CSSOM 등 외부 노드들도 모두 불러왔을 떄 실행(컨텐츠 포함)
+    window.onload = function () {
+      document.body.innerHTML += `<h2>window.onload</h2>`;
+    }
+    */
+
+    // 다른 외부 노드 상관없이 DOM만 불러오면 실행. 이미지나 영상 등을 기다리지 않음
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.innerHTML += `<h2>DOMContentLoaded</h2>`;
+    });
+  </script>
+  <!-- <script src="" defer></script> -->
+</head>
+
+<body>
+  <script>
+    // 2 : h2구조가 만들어진 후 h1 구축
+    // document.body.innerHTML = write(1);
+    document.body.innerHTML += write(1);
+  </script>
+
+  <h1>event2-DOMContentLoaded</h1>
+  <p><a href="https://ko.javascript.info/onload-ondomcontentloaded" target="_blank">DOMContentLoaded</a></p>
+
+  <script>
+    // 3 : 가장 나중에 읽혔기 때문에 모든 내용을 덮음
+    // document.body.innerHTML = write(2);
+    document.body.innerHTML += write(2);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>반응형 웹 연습</title>
+    <!-- favicon -->
+    <!-- og -->
+
+    <!-- 멀티페이지웹에서 성능 최적화를 고려한다면 link, 관리를 고려한다면 @import -->
+    <link rel="stylesheet" href="/assets/styles/reset.min.css">
+    <!-- swiper style -->
+    <link rel="stylesheet" href="/assets/styles/swiper-bundle.min.css">
+
+    <!-- 공통 style -->
+    <link rel="stylesheet" href="/assets/styles/common.css">
+    <!-- layout : header, footer -->
+    <link rel="stylesheet" href="/assets/styles/layout.css">
+    <!-- layout : 현재페이지(index.html) -->
+    <link rel="stylesheet" href="/index.css">
+
+    <!-- swiper js -->
+    <script src="/assets/scripts/swiper-bundle.min.js"></script>
+    <!-- kakao js -->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2ebe39690b5aef000c74f523879175a1"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header flex-container">
+        <h1 class="logo margin-sm">
+            <!-- "/"로 시작하면 루트 상대 경로, 서버에서만 확인 가능 -->
+            <a href="/"><img src="/assets/images/logo.png" alt="반응형 웹 로고"></a>
+        </h1>
+        <nav class="header-nav margin-md">
+            <!-- pc menu -->
+            <ul class="global-menu">
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">SERVICE</a></li>
+                <li><a href="">PORTFOLIO</a></li>
+                <li><a href="">BOARD</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">ELEMENT</a></li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">LOGIN</a></li>
+                <li><a href="">JOIN</a></li>
+            </ul>
+            <!-- mobile menu -->
+            <a href="#" class="mobile-menu">
+                <span>모바일</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- main-contents -->
+    <!-- main-slide -->
+    <section class="main-slide">
+        <!-- https://swiperjs.com -->
+        <!-- 슬라이드: 슬라이드 이미지, 버튼, 캐러셀, 진행바 ... -->
+        <div class="main-swiper swiper">
+            <div class="swiper-wrapper">
+                <!-- 각 각의 슬라이드 이미지 -->
+                <div class="swiper-slide main-bg1">Slide 1</div>
+                <div class="swiper-slide main-bg2">Slide 2</div>
+                <div class="swiper-slide main-bg3">Slide 3</div>
+                <div class="swiper-slide main-bg4">Slide 4</div>
+            </div>
+            <!-- 슬라이드 사이드 버튼(캐러셀) -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 슬라이드 하단 버튼(페이지내이션) -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- main-intro -->
+    <section class="main-intro margin-lg">
+        <ul class="main-intro-wrapper grid-container">
+            <li>
+                <h3>Branding</h3>
+                <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital
+                    design & web development services.This theme does everything you could possibly want it to do and,
+                    it is beautifully designed.
+                </p>
+            </li>
+            <li>
+                <h3>Development</h3>
+                <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital
+                    design & web development services.This theme does everything you could possibly want it to do and,
+                    it is beautifully designed.
+                </p>
+            </li>
+            <li>
+                <h3>Analysis</h3>
+                <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital
+                    design & web development services.This theme does everything you could possibly want it to do and,
+                    it is beautifully designed.
+                </p>
+            </li>
+            <li>
+                <h3>Marketing</h3>
+                <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital
+                    design & web development services.This theme does everything you could possibly want it to do and,
+                    it is beautifully designed.
+                </p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- main-grid -->
+    <section class="main-grid">
+        <ul class="main-grid-wrapper grid-container">
+            <li class="main-grid-bg1">
+                <h3>Branding</h3>
+            </li>
+            <li class="main-grid-bg2">
+                <h3>Development</h3>
+            </li>
+            <li class="main-grid-bg3">
+                <h3>Analysis</h3>
+            </li>
+            <li class="main-grid-bg4">
+                <h3>Marketing</h3>
+            </li>
+            <li class="main-grid-bg5">
+                <h3>Design</h3>
+            </li>
+            <li class="main-grid-bg6">
+                <h3>Strategy</h3>
+            </li>
+            <li class="main-grid-bg7">
+                <h3>Strategy</h3>
+            </li>
+        </ul>
+    </section>
+
+    <!-- main-business -->
+    <section class="main-business">
+        <h2 class="main-title">Our Business</h2>
+        <p class="main-des">We are a passionate digital design agency that specializes<br>in beautiful and easy-to-use
+            digital design & web development services.</p>
+        <div class="main-business-list grid-container margin-lg">
+            <figure>
+                <img src="/assets/images/img-01.jpg" alt="Brokerage & Trading">
+                <figcaption>
+                    <strong>Brokerage & Trading</strong><br>
+                    This theme does everything you could possibly want it to do
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/images/img-02.jpg" alt="Investment Banking">
+                <figcaption>
+                    <strong>Investment Banking</strong><br>
+                    This theme does everything you could possibly want it to do
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/images/img-03.jpg" alt="Contracts & Research">
+                <figcaption>
+                    <strong>Contracts & Research</strong><br>
+                    This theme does everything you could possibly want it to do
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/images/img-04.jpg" alt="Award winning agency">
+                <figcaption>
+                    <strong>Award winning agency</strong><br>
+                    This theme does everything you could possibly want it to do
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- main-youtube -->
+    <section class="main-youtube">
+        <div class="main-youtube-wrapper margin-lg grid-container">
+            <h2 class="main-title">Our Youtube</h2>
+            <p class="main-youtube-des">In an ideal world this text wouldn’t exist, a client would acknowledge the
+                importance of having web copy before the design starts. Needless to say it’s very important, content is
+                king
+                and people are beginning to understand that. However, back over in reality some project schedules and
+                budgets don’t allow for web copy to be written before the design phase, this is sad but true.</p>
+            <div class="main-youtube-video">
+                <iframe
+                    src="https://www.youtube.com/embed/znNllvBt_Jg?si=RjBTq9mGDWjctnI1&amp;controls=0&mute=1&loop=1&autoplay=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- main-service -->
+    <section class="main-service">
+        <h2 class="main-title">Our Service</h2>
+        <ul class="main-service-gallery margin-md flex-container">
+            <li>
+                <a href="#"><img src="./assets/images/img-05.jpg" alt="Branding"></a>
+                <div class="main-serive-gallery-text">
+                    <h4>Branding</h4>
+                    <p>This theme does everything you could possibly want it to do and, it is beautifully designed.</p>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="./assets/images/img-06.jpg" alt="Development"></a>
+                <div class="main-serive-gallery-text">
+                    <h4>Development</h4>
+                    <p>This theme does everything you could possibly want it to do and, it is beautifully designed.</p>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="./assets/images/img-07.jpg" alt="Analysis"></a>
+                <div class="main-serive-gallery-text">
+                    <h4>Analysis</h4>
+                    <p>This theme does everything you could possibly want it to do and, it is beautifully designed.</p>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="./assets/images/img-08.jpg" alt="Strategy"></a>
+                <div class="main-serive-gallery-text">
+                    <h4>Strategy</h4>
+                    <p>This theme does everything you could possibly want it to do and, it is beautifully designed.</p>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="./assets/images/img-09.jpg" alt="Marketing"></a>
+                <div class="main-serive-gallery-text">
+                    <h4>Marketing</h4>
+                    <p>This theme does everything you could possibly want it to do and, it is beautifully designed.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- main-location -->
+    <section class="main-location">
+        <h2 class="main-title">Location</h2>
+        <ul class="main-location-menu margin-lg">
+            <li class="main-location-office active">
+                <h3>office</h3>
+                <div class="main-location-map tab-box">
+                    <div class="kakao-map" id="kakao-Map">카카오지도</div>
+                    <ul class="main-location-info">
+                        <li>
+                            <strong>ADDRESS</strong>
+                            795 Folsom Ave, Suite 600 San Francisco
+                        </li>
+                        <li>
+                            <strong>TEL</strong>
+                            02-1234-5678
+                        </li>
+                        <li>
+                            <strong>FAX</strong>
+                            02-1234-5678
+                        </li>
+                        <li>
+                            <strong>SUB</strong>
+                            Working at the nexus of aesthetics and sustainability to craft meaningful design ideas that
+                            endure.
+                        </li>
+                        <li>
+                            <strong>BUS</strong>
+                            This theme does everything you could possibly want it to do and, it is beautifully designed.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main-location-factory">
+                <h3>factory</h3>
+                <div class="tab-box">
+                    <p>내용없음</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- main-talk -->
+    <section class="main-talk">
+        <div class="color-layer grid-container">
+            <h2 class="main-title">Let's Talk</h2>
+            <p>Herb multiply also earth one you’ll a wherein form creature be.<br>Unto land open creature give their
+                midst together, fruit good thing multiply fill it.</p>
+            <a href="#" class="ghost-btn">CONTACT US</a>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <section class="footer-info grid-container margin-sm">
+            <h2 class="footer-logo">로고</h2>
+            <div class="footer-info-list">
+                <h3>Contact</h3>
+                <p>02 1234 5678<br>from.yami@gmail.com</p>
+            </div>
+            <div class="footer-info-list">
+                <h3>Location</h3>
+                <p>795 Folsom Ave, Suite 600<br>San Francisco, CA 94107</p>
+            </div>
+            <div class="footer-info-list">
+                <h3>Social</h3>
+                <ul class="social-list flex-container">
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path
+                                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path
+                                    d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                <path
+                                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+                            </svg>
+                        </a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer-copyright">
+            <p>Copyrights &copy; 2020 All Rights Reserved by DYAMI.</p>
+            <ul class="footer-policy flex-container">
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <!-- 위로 -->
+    <a href="#" class="go-to-up">위로</a>
+    <!-- swiper js -->
+    <script>
+        const swiper = new Swiper(".main-swiper", {
+            centeredSlides: true,
+            autoplay: {// 자동 시작
+                delay: 2500,// 1000 == 1s
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true// 반복
+        });
+    </script>
+    <script>
+        const mapContainer = document.getElementById('kakao-Map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.566295, 126.977873), // 지도의 중심좌표
+                level: 3, // 지도의 확대 레벨
+                mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+            };
+
+        // 지도를 생성한다 
+        const map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 지도에 마커를 생성하고 표시한다
+        const marker = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(37.566295, 126.977873), // 마커의 좌표
+            map: map // 마커를 표시할 지도 객체
+        });
+    </script>
+</body>
+
+</html>

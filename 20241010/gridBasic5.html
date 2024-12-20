@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gridBasic5</title>
+    <style>
+        body {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        .container {
+          width: 90%;
+          margin: 50px auto;
+          border: 6px solid #000;
+    
+          display: grid;
+          gap: 4px;
+        }
+        .container .item {
+          background-color: #CDC1FF;
+        }
+        .box1 {
+            /* 1행 2열 */
+            /* 템플릿으로 값을 지정(명시)하면 그 외의 셀은 컨텐츠가 가지고 있는 값만 가짐 */
+            grid-template: 70px / 1fr 1fr;
+
+            /* 암시적 그리드 : 명시적 그리드외 추가되는 크기 정의 */
+            /* grid-auto-rows: auto; 기본값 */
+            grid-auto-rows: 100px;
+        }
+        .box2 {
+            height: 60vh;
+            grid-template: 50px 50px /1fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        .box3 {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: minmax(50px, 50vh);
+        }
+        .box4 {
+            grid-auto-columns: 1fr;
+            grid-auto-columns: minmax(200px, 50%);
+        }
+        .box5 {
+            grid-auto-rows: 10vw;
+            /* 컨텐츠가 넘치지 않게 하면서 가능한 한 트랙을 작게 만듦. 텍스트 중 가장 짧은 단어를 기준으로 가로 사이즈 지정 */
+            grid-auto-columns: min-content;
+        }
+        .box6 {
+            grid-auto-rows: 10vw;
+            /* 컨텐츠 기준 가장 긴 부분을 기준으로 가로 사이즈 지정. 문자열이 줄바꿈되지 않으면 오버플로우가 생길 수 있음 */
+            grid-template-columns: max-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>gridBasic5</h1>
+    <h2>grid-auto-rows: 명시된(지정된) 행 외의 줄 추가</h2>
+    <div class="container box1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container box2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container box3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container box4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container box5">
+        <div class="item">item1</div>
+        <div class="item">item2 abcdefg</div>
+        <div class="item">item3 가나다라마</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6 아자차카타파하</div>
+        <div class="item">item7</div>
+    </div>
+    <div class="container box6">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3 Lorem ipsum</div>
+        <div class="item">item4 magni dolore ducimus autem hic, voluptatem minus?</div>
+        <div class="item">item5</div>
+        <div class="item">item6  dolor sit amet consectetur adipisicing elit. Exercitationem repudiandae blanditiis beatae quia. Explicabo eum quam sapiente error ratione, aspernatur optio at expedita</div>
+        <div class="item">item7</div>
+    </div>
+</body>
+</html>

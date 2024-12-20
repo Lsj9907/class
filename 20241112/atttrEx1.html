@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>attrEx2</title>
+    <style>
+        img {
+            width: 400px;
+        }
+
+        p {
+            border: 3px solid #000;
+            background-color: #ddd;
+            padding: 4px;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.btn1').on('click', function () {
+                const src = $('img').attr('src'); //src 속성 읽기
+                $('p').text(src).css({ backgroundColor: 'orange' });
+            });
+            $('.btn2').on('click', function () {
+                const alt = $('img').attr('alt');
+                $('p').text(alt).css({ backgroundColor: 'maroon' });
+            });
+            $('.btn3').on('click', function () {
+                const wt1 = $('img').attr('width');// attr() 메서드는 html 요소의 속성을 가지고 오는데 img의 width 속성은 없기 때문에 읽지 못함
+                const wt2 = $('img').css('width');
+                const wt3 = $('img').width();// 요소의 사이즈 확인시
+                $('p').text(wt3).css({ backgroundColor: 'teal' });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>attrEx1</h1>
+    <button class="btn1">경로 확인</button>
+    <button class="btn2">대체 텍스트</button>
+    <button class="btn3">이미지 가로 사이즈</button>
+    <p>이 곳에 출력 됩니다</p>
+    <img src="./images/img1.png" alt="내 코드 보여줄 때">
+</body>
+
+</html>

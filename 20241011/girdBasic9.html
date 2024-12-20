@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gridBasic9</title>
+    <style>
+        body {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: 50px auto;
+            border: 6px solid #000;
+
+            display: grid;
+            gap: 4px;
+        }
+
+        .container .item {
+            background-color: #E5D9F2;
+            /*
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            */
+            display: grid;
+            place-items: center;
+        }
+        .box1 {
+            grid-template-rows: repeat(4, 70px);
+        }
+        .box1 .item1 {
+            align-self: start;
+        }
+
+        .box1 .item2 {
+            align-items: stretch;
+        }
+
+        .box1 .item3 {
+            align-self: end;
+        }
+
+        .box1 .item4 {
+            align-self: center;
+        }
+
+        .box2 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .box2 .item1 {
+            justify-self: start;
+        }
+        .box2 .item2 {
+            justify-self: stretch;
+        }
+        .box2 .item3 {
+            justify-self: end;
+        }
+        .box2 .item4 {
+            justify-self: center;
+        }
+
+        .box3 {
+            grid-template: 70px 70px / 1fr 1fr;
+        }
+        .box3 .item1 {
+            place-self: center start; /* row col */
+            order: 3;
+        }
+        .box3 .item2 {
+            place-self: center end;
+            order: 1;
+        }
+        .box3 .item3 {
+            place-self: end;
+            order: 4;
+        }
+        .box3 .item4 {
+            place-self: stretch center;
+            order: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>gridBasic9</h1>
+    <h2>그리드 아이템 개별 정렬: justify-self, align-self</h2>
+    <h2>order: flex-item, grid-item에 적용. 아이템들의 순서를 정함</h2>
+    <div class="container box1">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container box2">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container box3">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+</body>
+
+</html>

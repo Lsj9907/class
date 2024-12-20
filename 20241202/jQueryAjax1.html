@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>jQueryAjax1</title>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+  <style>
+    .border {
+        border: 1px solid #000;
+        margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>jQueryAjax1</h1>
+  <p>Ajax : 비동기 통신 방법으로 전체 페이지를 새로고침하지 않고 필요한 데이터만 교환하는 방식</p>
+
+  <ol class="user-data"></ol>
+
+  <script>
+    /* 
+      https://api.jquery.com/jQuery.ajax
+      jQuery.ajax( url [, settings ] );
+      $.ajax({
+        url: "파일 위치",
+        type: 'GET', 요청 방식
+        dataType: "json", 서버에서 반환할 데이터 형식
+        data: { key: '서버로 전송할 데이터로 객체, 문자열, 배열 등' },
+        success: "요청한 결과가 성공했을 때 실행할 함수",
+        error: "요청 실패했을 때 실행할 함수"
+      });
+    */
+
+    const URL = 'https://jsonplaceholder.org/users';
+    const LOCAL = './DB/users.json';
+
+    $.ajax({
+        url: URL,
+        type: 'GET',
+        dataType:"json",
+        success: function(users){
+            // console.log(users)
+            if(users) {
+                $.each(users, function(idx, user) {
+                    const dataListStyle = $('<li>').addClass('border');
+                    $('<h3>').text(users.firstname),appendTo(dataListStyle);
+                    $('<p>').text(users.email),appendTo(dataListStyle);
+                    $('<p>').text(users.address.street),appendTo(dataListStyle);
+                    
+                    $('.user-data').append(dataListStyle);
+                });
+            }
+        },
+        error: function(xhr, status, err){
+            console.log('AJAX 요청 실패: ', xhr, status, err)
+        }
+    });
+  </script>
+</body>
+</html>

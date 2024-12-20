@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gridBasic3</title>
+    <style>
+        body {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        .container {
+          width: 90%;
+          margin: 50px auto;
+          border: 6px solid #000;
+    
+          display: grid;
+          /*
+          2행{100px} 2열(1/1)
+          grid-template-rows: 100px 100px;
+          grid-template-columns: 1fr 1fr;
+          */
+          /* row / columns */
+          grid-template: 100px 100px / 1fr 1fr;
+        }
+        .container .item {
+          background-color: #FFB0B0;
+        }
+
+        .box1 .item {
+            margin: 10px;
+        }
+        .box2 {
+            gap: 10px;
+            /* row columns */
+            gap: 10px 20px;
+        }
+        .box3 {
+            row-gap: 2vw;
+        }
+        .box4 {
+            column-gap: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>gridBasic3</h1>
+    <h2>gap: 열과 행의 간격(gutter)</h2>
+    <div class="container box1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="container box2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="container box3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    <div class="container box4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>positionEx1</title>
+    <style>
+        .container{
+            background-color: #8CC0DE;
+            list-style: none;
+            padding: 0;
+            width: 600px; height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 150px auto;
+        }
+        .container .box{
+            background-color: #187498;
+            width: 80px; height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .container .box2{
+            position: relative;
+            top: 0; left: 390px;
+        }
+        .container .box3{
+            position: relative;
+            top: 520px; right: 260px;
+        }
+        .container .box4{
+            position: relative;
+            top: 520px; left: 130px;
+        }
+        .container .box5{
+            position: relative;
+            top: 260px; right: 260px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="container">
+        <li class="box box1">1</li>
+        <li class="box box2">2</li>
+        <li class="box box3">3</li>
+        <li class="box box4">4</li>
+        <li class="box box5">5</li>
+    </ul>
+</body>
+</html>

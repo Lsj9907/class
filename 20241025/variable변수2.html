@@ -1,0 +1,33 @@
+<script>
+    // variable변수2
+    
+    /* 
+     변수 호이스팅 Hoisiting:
+        - 호이스팅 Hoisting 끌어올린다
+        변수 apple을 인지하고 메모리에 변수 자리를 미리 만들어 놓은 상태(초기화)
+    */
+    console.log('--- var ---');
+    console.log(apple); // undefined 선언만 되고 값을 할당 받지 못함
+    var apple = 100; // var 키워드는 변수 호이스팅 가능. 나중에 선언해도 오류가 나지 않음
+    console.log(apple);
+    apple = 150; // 재할당
+    var apple = 200; // 재선언 가능
+    console.log(apple);
+    var apple = '중복 선언, 재선언 가능 ㅎㅎㅎㅎ';
+    console.log(apple);
+
+    console.log('--- let ---');
+    // console.log(banana); let 키워드는 변수 호이스팅 불가능
+    let banana;
+    banana = 500 // 재할당
+    console.log(banana);
+    // let banana = 1000; 중복 선언 불가, 재선언 불가
+    console.log(banana);
+
+    /* 
+     var, let 키워드 없이 작성되는 변수들은 암시적 전역 변수로 var 키워드와 유사함
+    */
+
+   cherry = 100;
+   console.log(cherry);
+</script>

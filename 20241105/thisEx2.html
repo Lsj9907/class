@@ -1,0 +1,32 @@
+<script>
+  // thisEx2
+
+  /* 
+    객체 생성과 동시에 프로퍼티 대입.
+    id, 커피명, 가격, 사이즈, 콘솔 출력 매서드
+    '주문한 커피는 xxx이고 가격은 xxx원이고, 사이즈는 xxx입니다'
+  */
+
+  const id = 1, coffee = '라떼', price = 6000, size = 'tall';
+
+  const menu = {
+    // id : id, 키와 값이 같으면 값 생략 가능
+    id,
+    coffee,
+    price,
+    size,
+    output: function () {
+      console.log(`주문한 커피는 ${this.coffee}이고 가격은 ${this.price.toLocaleString()}원 이고 사이즈는 ${this.size}입니다`)
+    },
+    arrow : () => {
+      // 객체 안의 키 값을 참조한 것이 아닌 상단에 선언한 변수 값을 직접 참조한 값
+      console.log(`주문한 커피는 ${coffee}이고 가격은 ${price.toLocaleString()}원 이고 사이즈는 ${menu.size}입니다`)
+    },
+    order() {// 축약형
+      console.log(`주문한 커피는 ${this.coffee}이고 가격은 ${this.price.toLocaleString()}원 이고 사이즈는 ${this.size}입니다`)
+    }
+  }
+  console.log(menu);
+  menu.output();
+  menu.arrow();
+</script>

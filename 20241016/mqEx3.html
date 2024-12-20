@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>mqEx3</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .wrapper {
+            height: 40vh;
+            background-color: aqua;
+        }
+        .container {
+            list-style: none;
+            margin: 0; padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .box {
+            display: block;
+            background-color: #fff;
+            margin: 15px 20px;
+            padding: 10px; 
+        }
+        .box4 {
+            display: none;
+        }
+        @media (min-width:600px) {
+            .wrapper{
+                height: 25vh;
+                background-color: #D2E0FB;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-row: 20vh 20vh;
+            }
+            .box {
+                background-color: #7ca371;
+                color: #fff;
+            }
+            .box10 {
+                display: none;
+            }
+        }
+        @media (min-width:768px) {
+            .wrapper{
+                height: 24vh;
+                background-color: #F9F3CC;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+            }
+            .box10{
+                display: block;
+                background-color: #E78F81;
+            }
+        }
+        @media (min-width:1200px) {
+            .wrapper{
+                height: 18vh;
+                background-color: #ddd;
+                margin-right: 200px;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+            }
+            .box {
+                padding: 15px 0;
+            }
+            .box4 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="container">
+            <li class="box box1">txt01</li>
+            <li class="box box2">txt02</li>
+            <li class="box box3">txt03</li>
+            <li class="box box4">txt04</li>
+            <li class="box box5">txt05</li>
+            <li class="box box6">txt06</li>
+            <li class="box box7">txt07</li>
+            <li class="box box8">txt08</li>
+            <li class="box box9">txt09</li>
+            <li class="box box10">txt10</li>
+        </ul>
+    </div>
+</body>
+</html>

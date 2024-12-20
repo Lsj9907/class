@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>classEx2</title>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <style>
+        .wrapper {
+            position: relative;
+        }
+
+        .wrapper .txt-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .wrapper .txt-wrapper span {
+            color: #FFCCEA;
+            font-size: 3rem;
+            display: block;
+            transition: 0.4s;
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        .wrapper .txt-wrapper h2 {
+            color: #CDC1FF;
+            transition: 0.8s;
+            font-size: 8rem;
+            line-height: 0.9;
+            margin: 10px 0;
+            transform: translateY(60px);
+            opacity: 0;
+        }
+
+        .wrapper .txt-wrapper.active span,
+        .wrapper .txt-wrapper.active h2 {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="txt-wrapper active">
+            <span>about</span>
+            <h2>think &<br>solution</h2>
+        </div>
+        <div class="txt-wrapper">
+            <span>skill</span>
+            <h2>html5 & css3<br>javascript</h2>
+        </div>
+        <div class="txt-wrapper">
+            <span>contact</span>
+            <h2>jQuery</h2>
+        </div>
+    </div>
+
+    <script>
+        /* 
+          setInterval(콜백함수, 시간);
+          setTimeout(()=>{}, 1000);
+        */
+        let currentIdx = 0; // 변수 선언. 인덱스 번호로 사용하기 위해
+        const movingText = () => {
+            //  0, 1, 2 순환
+            currentIdx = (currentIdx +1) % $('.wrapper .txt-wrapper').length;
+            // 기존에 있던 active 제거
+            // $('.wrapper .txt-wrapper').removeClass('active');
+            // 해당되는 요소(순차적)에 active 추가
+            // $('.wrapper .txt-wrapper').eq(currentIdx).addClass('active')
+            $('.wrapper .txt-wrapper').removeClass('active').eq(currentIdx).addClass('active');
+        }
+        setInterval(movingText, 2000); // 2초에 한 번씩 함수 호출
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>kakaoAPI2</title>
+  <style>
+    #search-form {
+        display: inline-block;
+    }
+    input, button {outline: none;}
+    #search-book {border: 3px solid #000; padding: 4px; width: 250px;font-size: 1.1rem;}
+    .search-btn { background-color: #000; border: none; color: white; font-weight: bold; font-size: 1.1rem; padding: 5px 10px;}
+    .list {border-top: 3px solid #000; margin: 30px 0; width: 80vw;}
+    h2 { background-color: orange;}
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>kakao API - fetch</h1>
+  <form id="search-form">
+    <input type="search" name="searchBook" id="search-book">
+    <button type="submit" class="search-btn">검색</button>
+  </form>
+
+  <div class="list"></div>
+
+  <script>
+    const URL = "https://dapi.kakao.com/v3/search/book?target=title";
+    const KAKAO_API_KEY = "83f7cb6d2b127a0e741d16c395e85713"
+
+    $('#search-form').on('submit', function(e) {
+      e.preventDefault();
+
+      // const query = document.querySelector('#search-book').value;
+      const query = $('#search-book').val();// 텍스트 필드 안의 내용을 가져옴
+
+      fetch(URL + `&query=${query}&size=5&sort=latest&target=title`, {
+        method: 'GET',
+        headers: { Authorization: `KakaoAK ${KAKAO_API_KEY}` }
+      }).then(res => res.json()).then(data => {
+        // console.log(data.documents);
+
+        $('.list').empty();// 기존 목록 초기화
+
+        data.documents.forEach( function(item) {
+          let section = $('<section>');
+          $('<h3>').text(item.title).appendTo(section);
+          $('<p>').text(item.contents).appendTo(section);
+          $('<img>').attr({ 'src': item.thumbnail, 'alt': item.title }).appendTo(section);
+
+          $('.list').append(section);
+        });
+      }).catch((err)=>{
+        console.log('에러 상황', err)
+      });
+    });
+  </script>
+</body>
+</html>

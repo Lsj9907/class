@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>async+awaitEx</title>
+  <style>
+    ul { 
+      padding: 20px;
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="result"></div>
+
+  <script>
+    const result = document.querySelector('.result');
+    const URL = 'https://jsonplaceholder.org/users';
+
+    // 데이터 요청
+    // fetch().then().then()
+    // fetch(URL).then(res => res.json()).then(items => console.log(items));
+    const data = async() => {
+      const res = await fetch(URL);
+      const users = await res.json();
+
+      // console.log(users);
+      userList(users);
+    }
+
+    // 문서 출력
+    const userList = (users) => {
+      let output = '';
+
+      users.forEach(user => {
+        output += `
+          <h2>이름 : ${user.firstname}</h2>
+          <ul>
+            <li>이메일 : ${user.email}</li>
+            <li>주소 : ${user.address.street}</li>
+          </ul>
+        `;
+      });
+
+      result.innerHTML = output;
+    }
+
+    data();
+  </script>
+</body>
+</html>

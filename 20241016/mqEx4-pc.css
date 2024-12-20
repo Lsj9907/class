@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .menu-wrapper .global-menu {
+    grid-template-columns: repeat(5, minmax(100px, 200px));
+    justify-content: center;
+  }
+  .menu-wrapper .global-menu li a {
+    border-right: 1px solid #fff;
+    border-bottom: none;
+    text-align: center;
+  }
+  .menu-wrapper .global-menu li a:hover {
+    background-color: rgba(32, 62, 96, 0.7);
+  }
+  .menu-wrapper .global-menu li:last-child a {
+    border-right: none;
+  }
+}

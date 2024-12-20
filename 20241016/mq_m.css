@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* 모바일 기준 */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    background-color: #EF9C66;
+    color: #fff;
+    margin: 0;
+    /* padding : 30px */
+    padding: 1.875em;
+    transition: 0.4s;
+    font-size: 1.5rem;
+}
+
+h1 strong {
+    display: block;
+}
+
+h2 {
+    background-color: #FF8A8A;
+    color: #fff;
+    margin: 0;
+    font-size: 1.2rem;
+    /* padding : 20px */
+    padding: 1.25em;
+    transition: 0.4s;
+}
+
+.container {
+    font-weight: bold;
+    color: #646464;
+
+    display: grid;
+    grid-auto-rows: 20vh;
+}
+
+.container .box1 {
+    background-color: #F8E8EE;
+}
+
+.container .box2 {
+    background-color: #FDCEDF;
+}
+
+.container .box3 {
+    background-color: #F2BED1;
+}

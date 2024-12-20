@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>scrollTop+scrollLeft</title>
+  <style>
+    body { height: 200vh; }
+    .container { width: 250px; height: 250px; overflow: auto; }
+    .container .box { width: 2000px; height:1000px; background-color:  lightblue; }
+    p { margin: 0; padding: 10px; }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>scrollTop, scrollLeft</h1>
+  <h2>.scrollTop()</h2>
+  <h3>가로, 세로 스크롤 되는 크기를 불러오거나 반환. 스크롤 값. 숫자로 반환</h3>
+  <p><a href="https://ko.javascript.info/size-and-scroll#ref-811" target="_blank">javascript.info</a></p>
+
+  <button id="btn1" class="btn">가로 스크롤: left -> right</button>
+  <button id="btn2" class="btn">세로 스크롤: top -> bottom</button>
+
+  <div class="container">
+    <div class="box">
+      <p>text1</p>
+      <p>text2</p>
+      <p>text3</p>
+      <p>text4</p>
+    </div>
+  </div>
+
+  <script>
+    addEventListener('scroll', () => {
+      // 문서 처음부터 얼마만큼 스크롤 했는지의 값 반환. 스크롤 이동값
+      console.log("JS: " + document.documentElement.scrollTop);
+    });
+
+    $(window).on('scroll', function() {
+      console.log('jQuery : ' + $(document).scrollTop());
+    });
+
+    // document.querySelector('#btn1').addEventListener('click', () => document.querySelector('.container').scrollLeft += 300 );
+
+    $('#btn1').on('click', function() {
+      // $('.container').scrollLeft(300);
+      $('.container').stop().animate({ scrollLeft: '+=' + 100 });
+    });
+    $('#btn2').on('click', function() {
+      $('.container').stop().animate({ scrollTop: '+=' + 100 });
+    });
+  </script>
+</body>
+</html>

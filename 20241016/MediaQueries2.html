@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>미디어쿼리 Media Queries란?</title>
+  <style>
+    /* pc 기준 */
+    html ::selection {
+        background-color: #F5004F;
+        color: #fff;
+    }
+    html {
+        font-size: 16px;
+    }
+    body {
+        font-size: 1.2rem;
+        background-color: #ddd;
+    }
+    h1 {
+        border-bottom: 3px solid #000;
+        background-color: #A5B68D;
+        padding: 0.95rem;
+    }
+    ul {
+        padding: 1.2rem 1.8rem;
+        margin: 1.1rem;
+        border: 3px solid #000;
+    }
+    @media (max-width: 1024px) {
+        /* 스크린 가로 최대 크기가 1024이하면 적용 */
+        body {
+            background-color: #E7CCCC;
+        }
+    }
+    @media (max-width: 768px) {
+        /* 스크린 가로 최대 크기가 768이하면 적용 */
+        html {
+            font-size: 15px;
+        }
+        body {
+            background-color: #FFECC8;
+        }
+    }
+    @media (max-width: 414px) {
+        /* 스크린 가로 최대 크기가 414이하면 적용 */
+        html {
+            font-size: 14px;
+        }
+        body {
+            background-color: #A5B68D;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>미디어쿼리 Media Queries</h1>
+  <ul>
+    <li>@media () {}</li>
+    <li>모바일 우선인 경우 min-width</li>
+    <li>*** min-width 혹은 모바일 우선 작업시 <strong>반드시 가로 크기가 작은 순서</strong>대로 작성***</li>
+    <li>pc 우선인 경우 max-width</li>
+    <li>max-width 혹은 피씨 우선 작업시 <strong>반드시 가로 크기가 큰 순서</strong>대로 작성</li>
+  </ul>
+</body>
+</html>

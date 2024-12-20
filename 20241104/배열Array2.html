@@ -1,0 +1,61 @@
+<script>
+    // 배열Array2
+
+    let arr1 = [
+        {id : 1,
+            coffee : '아메리카노',
+            price : 20000
+        },
+        {id : 2, coffee: '라떼', price: 25000},
+        {id : 3, coffee: '녹차', price: 30000},
+    ]
+    console.log(arr1);
+    console.log(arr1[1]); // {id: 2, coffee: '라떼', price: 25000}
+    console.log(arr1[1].coffee); '라떼'
+    arr1[5] = 'string';
+    console.log(arr1); // [{…}, {…}, {…}, empty × 2, 'string']
+    console.log(arr1.length); // 6
+
+    console.log('.push() 배열의 제일 마지막에 추가 --');
+    arr1.push({id : 6, coffee: '바닐라라떼', price: 30000});
+    console.log(arr1);
+
+    console.log('.unshift() 배열의 제일 처음에 추가 --');
+    arr1.push({id : 0, coffee: '오늘의 커피', price: 15000});
+    console.log(arr1);
+
+    console.log('.concat() 둘 이상의 배열 연결 --');
+    // 기존 배열 요소를 건드리지 않고 새로운 배열로 반환 -> 새로운 Array 객체로 반환
+    let arr2 = [1,2,3,4];
+    let arr3 = arr2.concat();
+    let arr4 = arr2.concat(40,50,60)
+    let arr5 = arr2.concat('아메리카노','라떼')
+    console.log(arr2); // [1,2,3,4]
+    console.log(arr3); // [1,2,3,4] 새로운 배열로 반환
+    console.log(arr4); // [1,2,3,4, 40,50,60] 새로운 배열로 반환
+    console.log(arr5); //[1, 2, 3, 4, '아메리카노', '라떼'] 새로운 배열로 반환
+    console.log(arr2.concat(arr5)); //[1, 2, 3, 4, 1, 2, 3, 4, '아메리카노', '라떼']
+    console.log(arr2); // [1, 2, 3, 4] 원본 유지
+
+    console.log('join() 배열 안의 요소를 매개변수로 연결 --');
+    console.log(arr3.join('🌸🐕'));
+    console.log(arr3); // [1,2,3,4]
+
+
+    console.log('splice(시작인덱스,[, 요소의수, 대체요소]) --');
+    // 특정 항목 삭제 및 대체
+    console.log(arr5.splice(0,5)); // 인덱스 0부터 5'이전'까지 추출(삭제). 원본 추출
+    console.log(arr5); //'라떼'. 원본 변경
+    
+
+    console.log('slice(시작인덱스,[, 마지막인덱스]) --');
+    // 시작 인텍스부터 마지막 인덱스 전까지 추출, 새로운 배열로 반환하기 때문에 ㅇ너본 배열값 유지
+    let item = [10,20,30,40,50];
+    console.log(item.slice(1)); // [20, 30, 40, 50]
+    console.log(item); // [10, 20, 30, 40, 50] 원본 배열 값 유지
+    
+    console.log('(delete 키워드 : 요소"만" 제거 --)');
+    console.log(delete item[2]); // true
+    console.log(item); //[10, 20, empty, 40, 50] 값만 제거도기 때문에 빈 배열값을 가짐
+    console.log(item.length); // 5 요소의 수 변화 없음
+</script>

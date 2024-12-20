@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aniEx1</title>
+    <style>
+        @keyframes gradient {
+            0% {
+                background-position:  0 0;
+            } 30% {
+                background-position: 100% 50%;
+            } 60% {
+                background-position: 50% 50%;
+                background-image: linear-gradient(45deg, #640D5F 10%,#D91656 40%,#EE66A6, #FFEB55)
+            }100% {
+                background-position: 0 30%;
+            }
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+            background-image: linear-gradient(-45deg, #640D5F 10%,#D91656 40%,#EE66A6, #FFEB55);
+            background-size: 400%;
+            animation: gradient 10s infinite cubic-bezier(0.215, 0.610, 0.355, 1) alternate;
+        }
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 2rem;
+            font-weight: bold;
+            border: 6px solid #fff;
+            padding: 10px 30px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="btn">aniEX1</a>
+</body>
+
+</html>

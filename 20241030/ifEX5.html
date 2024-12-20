@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ifEx5</title>
+    <style>
+        img {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ifEX5</h1>
+    <script>
+        /*
+        document.body.innerHTML = "<h2>문제1</h2>";
+        document.body.innerHTML = "<h2>문제2</h2>";
+        document.write("<h2>문제3</h2>");
+        */
+
+        // 1~4 사이의 숫자 입력하면 해당 번호와 이미지를 출력
+        // document.body.innerHTML += '<img src = "./images/food1.jpg" alt="img1'>';
+       
+
+        let num = prompt('1~4 사이의 숫자를 입력하세요'); 
+        console.log(typeof num); //문자열
+         /* 
+        if(num === '1') {
+            document.body.innerHTML +='<img src="./images/background-7842730_640.jpg" alt="img1">'
+        }else if(num === '2') {
+            document.body.innerHTML +='<img src="./images/bee-7666216_640.jpg" alt="img2">'
+        }else if(num === '3') {
+            document.body.innerHTML +='<img src="./images/moon-8915326_1280.jpg" alt="img3">'
+        }else if(num === '4') {
+            document.body.innerHTML +='<img src="./images/night-3078326_640.jpg" alt="img5">'
+        }else {
+            document.body.innerHTML +='<h2>해당 번호만 입력해 주세요</h2>'
+        }
+         */
+        
+        //  숫자 데이터 타입으로 변환
+        // num = Number(num);
+        // num = parseInt(num);
+        // num = +num;
+        num = num * 1;
+        console.log(typeof num);
+
+        if (num === 1) {
+            document.body.innerHTML += '<img src="./images/background-7842730_640.jpg" alt="img1">'
+        } else if (num === 2) {
+            document.body.innerHTML += '<img src="./images/bee-7666216_640.jpg" alt="img2">'
+        } else if (num === 3) {
+            document.body.innerHTML += '<img src="./images/moon-8915326_1280.jpg" alt="img3">'
+        } else if (num === 4) {
+            document.body.innerHTML += '<img src="./images/night-3078326_640.jpg" alt="img5">'
+        } else {
+            document.body.innerHTML += '<h2>해당 번호만 입력해 주세요</h2>'
+        }
+    </script>
+</body>
+
+</html>

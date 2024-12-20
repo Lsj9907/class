@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>scrollTopEx</title>
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <style>
+        body {text-align: center;}
+        header { width: 100%; position: fixed; top: 0; left: 0;
+        background-color: #C1CFA1; font-size: 1.2rem; text-transform: capitalize; transition: 0.4s;}
+        header .global-menu {display: flex; justify-content: flex-end; align-items: center; height: 80px; transition: 0.3s;}
+        header .global-menu a { display: block; padding: 0 10px;}
+        main {height: 200vh; background-color: #EDE8DC; transition: 0.3s;}
+        main h2 {padding-top: 200px; font-weight: bold; font-size: 3rem;}
+        .go-to-up {
+            text-indent: -9999px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 34px;
+            height: 34px;
+            background: url(./images/arrow_circle_up_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg) no-repeat 100% / cover;
+        }
+        header.change-header { background-color: rgba(231, 204, 204,0.7); font-size: 1rem; backdrop-filter: blur(50px);}
+        header.change-header .global-menu { height: 50px; border-bottom: 1px solid #222;}
+        header.change-header + main { padding-top: 100px; background-color: #ffede3;}
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <ul class="global-menu">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+    </header>
+    <main>
+        <h2>main</h2>
+    </main>
+    <a href="#" class="go-to-up">맨 위로</a>
+
+    <script>
+        // 스크롤 된 값이 300 이상이면 addClass(), 아니면 removeClass()
+        $('a[herf="#"]').on('click', function(e){
+            e.preventDefault(); // 요소의 기본 성격 제거
+        });
+        $('.go-to-up').on('click', function() {
+            $('html, body').animate({ scrollTop: 0 }, 300);
+        });
+
+        let scrollbar = 300;
+        $(window).on('scroll', function(){
+            const scrollHT = $(this).scrollTop();
+            if(scrollHT > scrollbar) {
+                $('header').addClass('change-header')
+            }else{
+                $('header').removeClass('change-header')
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>scrollEx1</title>
+  <style>
+    /* html { scroll-behavior: smooth; } */
+
+    .box { height: 300vh; }
+    .go-to-up { 
+      position: fixed;
+      font-size: 3rem;
+      right: 40px; bottom: 30px;
+
+      animation: ailien infinite 0.3s ease-in-out;
+      opacity: 0;
+      transition: 0.4s;
+      pointer-events: none;/* 마우스 기반 이벤트 제어 */
+    }
+
+    @keyframes ailien {
+      0%, 100% {
+        transform: translateX(5px) rotate(5deg);
+      }
+      50% {
+        transform: translateX(0) rotate(-5deg);
+      }
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="box">
+    <h1>scrollEx1</h1>
+  </div>
+  <a href="#" class="go-to-up">👽</a>
+
+  <script>
+    $(window).on('scroll', function() {
+      if(scrollY > 300) {
+        $('.go-to-up').css({ opacity:1, pointerEvents: 'auto'});
+      } else {
+        $('.go-to-up').css({ opacity:0, pointerEvents: 'none'});
+      }
+    });
+
+    $('.go-to-up').on('click', function (e) {
+      e.preventDefault();
+
+      // $('html, body').animate({ scrollTop: 0 });
+      scrollTo({
+        top: 30,
+        behavior: "smooth"
+      });
+    })
+  </script>
+</body>
+</html>

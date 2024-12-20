@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>mqEx1</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .wrapper {
+            display: grid;
+            grid-auto-rows: 40vh;
+        }
+        .wrapper .box1 {background-color: #D4E2D4;}
+        .wrapper .box2 {background-color: #FFCACC;}
+        .wrapper .box3 {background-color: #DBC4F0;}
+
+        /* 768px 이상 */
+        @media (min-width:768px) {
+            .wrapper {
+                grid-template-columns: 1fr 2fr;
+            }
+            .box3 {
+                /* grid-column: 1 / 3; */
+                grid-column: span 2;
+            }
+        }
+
+        /* 1200px 이상 */
+        @media (min-width:1200px) {
+            .wrapper {
+                grid-template-columns: 2fr 3fr 1fr;
+                grid-auto-rows: 100vh;
+            }
+            .box3 {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box box1">item1</div>
+        <div class="box box2">item2</div>
+        <div class="box box3">item3</div>
+    </div>
+</body>
+
+</html>

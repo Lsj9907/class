@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>animate2</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            position: relative;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <script src="../assets/scripts/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <h1>animate2</h1>
+    <button id="btn1">실행</button>
+    <button id="btn2">순차실행1</button>
+    <button id="btn3">순차실행2</button>
+
+    <div class="box">애니메이션</div>
+
+    <script>
+        // 첫번째 버튼 클릭시, width, height, margin-top 이용해 아래로 이동, left를 이용해 오른쪽으로 이동, 배경색
+        $('#btn1').on('click', function () {
+            $('.box').animate({
+                'width': '300px',
+                height: 200,
+                'margin-top': 100,
+                left: 100,
+                backgroundColor: '#78B3CE'
+            }, 800, 'linear');
+        });
+
+        // 콜백 지옥
+        $('#btn2').on('click', function () {
+            $('.box').animate({ width: 300 }, 500, 'linear', function () {
+                $('.box').animate({ height: 200 }, 400, 'easeInOutQuint', function () {
+                    $('.box').animate({ marginTop: 100 }, 800, 'easeInOutBack', function () {
+                        $('.box').animate({ 'transform': 'translateX(100px)' }, 1000, 'easeInOutElastic', function () {
+                            $('.box').animate({ backgroundColor: '#78B3CE' });
+                        })
+                    });
+                });
+            });
+        });
+
+        // method chaning의 방식으로 순차 진행
+        $('#btn3').on('click', function () {
+            $('.box').animate({ width: 300 }, 500, 'linear').animate({ height: 200 }, 400, 'easeInOutQuint').animate({ marginTop: 100 }, 800, 'easeInOutBack').animate({ backgroundColor: '#78B3CE' });
+        });
+    </script>
+</body>
+
+</html>

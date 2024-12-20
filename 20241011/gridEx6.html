@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gridEx6</title>
+    <style>
+        body {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .item {
+            border: 3px solid #000;
+            place-content: center;
+            text-align: center;   
+        }
+        .item1 {
+            border-right: none;
+            border-bottom: none;
+        }
+        .item2 {
+            border-bottom: none;
+        }
+        .item3 {
+            border-right: none;
+        }.item4, .item5 {
+            border-bottom: 0;
+        }
+        .item4, .item6 {
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="box">
+            <div class="item item4">item4</div>
+            <div class="item item5">item5</div>
+            <div class="item item6">item6</div>
+            <div class="item item7">item7</div>
+        </div>
+    </div>
+</body>
+
+</html>

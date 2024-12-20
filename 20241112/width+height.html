@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>width+height</title>
+  <style>
+    .box {
+      background-color: orange;
+      width: 40px;
+      height: 40px;
+      margin: 50px auto;
+      transition: 0.5s;
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('.box').width('40vw');
+      const wt = $('.box').width();// 박스의 가로값을 가져옴
+      const ht = $('.box').height();
+      console.log(wt, ht);
+
+      // 박스를 클릭하면, 가로값을 가져와 높이에 적용
+      $('.box').on('click', function () {
+        const wt = $('.box').width();
+        $(this).height(wt);
+      });
+
+      $('button[type=submit]').on('click', function (evt) {
+        evt.preventDefault();
+        // form의 값은 JS .value, jQuery .val();
+        const num = $('.size').val();
+        console.log(typeof num, num);
+        $('.box').width(num);
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <h1>width() height()</h1>
+  <form>
+    <input type="number" class="size" placeholder="숫자를 입력해 주세요">
+    <button type="submit">적용</button>
+    <div class="box">박스</div>
+  </form>
+  
+</body>
+</html>

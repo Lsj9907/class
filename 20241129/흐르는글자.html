@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>흐르는 글자</title>
+    <style>
+        body{
+            margin: 0; padding: 0;
+        }
+        .container
+        {
+            overflow: hidden;
+        }
+        .line-wrapper {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+        }
+        .line-wrapper  .text {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 5rem;
+            font-weight: bold;
+            display: flex;
+        }
+        .line-wrapper .text span {
+            margin-right: 60px;
+        }
+    </style>
+    <script src="../assets/scripts/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="line-wrapper line1">
+            <div class="text">
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+            </div>
+        </div>
+        <div class="line-wrapper line2">
+            <div class="text">
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+                <span>list 🎄 ✨ list</span>
+        </div>
+    </div>
+    <script>
+        const text1 = document.querySelector('.line1 .text');
+        const text2 = document.querySelector('.line2 .text');
+        const text1Wt = text1.offsetWidth; // w+p+b+scrollbar
+        const text2Wt = text2.offsetWidth;
+
+        // 첫번째 줄 애니메이션. 왼쪽 -> 오른쪽
+        gsap.fromTo(text1,
+        {x: 0},
+        {
+            x: -text1Wt / 2, // 텍스트 길이의 절반만큼 이동
+            duration: 30,
+            repeat: -1,
+            ease: 'lenear'
+        }
+    );
+
+        // 두번째 줄 애니메이션. 오른쪽 -> 왼쪽
+        gsap.fromTo(text2,
+            {x: -text2Wt / 2},
+            {
+                x: 0,
+                duration: 30,
+                repeat: -1,
+                ease: 'lenear'
+            }
+        )
+    </script>
+</body>
+
+</html>

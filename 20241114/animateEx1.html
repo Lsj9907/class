@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>animateEx1</title>
+    <style>
+        .box{width: 100px; height: 100px; background-color: magenta; color: #fff; position: relative;}
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <button id="btn1">왼쪽</button>
+    <button id="btn2">오른쪽</button>
+
+    <div class="box">애니메이션</div>
+    <script>
+        $('#btn1').on('click', function(){
+            $('.box').animate({left: '-=100'});
+        });
+        $('#btn2').on('click', function(){
+            $('.box').animate({left: '+=100'});
+        });
+    </script>
+</body>
+</html>

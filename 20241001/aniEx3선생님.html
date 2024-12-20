@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>aniEx3</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+        }
+        .container .fireworks {
+            animation: scale 3s infinite alternate;
+            /* align-self: flex-start; */
+            margin: 20px 20px auto auto;
+        }
+        .container .bicycle-wrapper {
+            animation: move 5s infinite;
+
+            position: relative;
+            /* border: 6px solid #000; */
+            z-index: 99;
+        }
+        .container .bicycle-wrapper:hover {
+            animation-play-state: paused; /* 일시 멈춤 */
+        }
+        .container .bicycle-wrapper .bicycle-wheel {
+            animation: spin 1s infinite;
+
+            position: absolute;
+            bottom: -88px; left: -93px;
+        }
+        .container .bicycle-wrapper .bicycle-wheel:last-child{
+            left: auto; /* 기존 left 무력화 */
+            right: -93px;
+        }
+    
+        @keyframes scale {
+            0% { opacity: 0; }
+            100% { opacity: 1; transform: rotate(360deg) scale(0.5); }
+        }
+        @keyframes spin {
+            100%{ transform: rotate(360deg); }
+        }
+
+        @keyframes move {
+            0% { opacity: 0; transform: translateX(-10vw); }
+            5% { opacity: 1; transform: translateX(-5vw); }
+            10% { opacity: 1; transform: translateX(0); }
+            80% { opacity: 1; transform: translateX(100vw); }
+            100% { opacity: 0; transform: translateX(110vw); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bicycle-wrapper">
+            <img src="./images/bicycle.png" alt="자전거 바디" class="bicycle-body">
+            <img src="./images/wheel.png" alt="자전거 바퀴" class="bicycle-wheel">
+            <img src="./images/wheel.png" alt="자전거 바퀴" class="bicycle-wheel">
+        </div>
+        <img src="./images/fireworks.png" alt="불꽃놀이 일러스트" class="fireworks">
+    </div>
+</body>
+</html>

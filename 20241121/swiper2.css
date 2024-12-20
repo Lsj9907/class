@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%; height: 70px;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #89A8B2;
+    z-index: 999;
+}
+
+nav .logo{
+    background-color: #fff;
+    color: #89A8B2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 60px; height: 50px;
+    display: grid;
+    place-items: center;
+    margin-left: 10px;
+}
+nav .logo.change-bg {
+    background-color: #89A8B2;
+    color: #fff;
+}
+nav .gnb {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: #89A8B2;
+    color: #fff;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+nav .gnb a {
+    padding: 10px 20px;
+    display: block;
+    border-bottom: 1px solid #fff;
+}
+  nav .gnb a.colorOn {
+    color: #E5E1DA;
+  }
+  /* main -wipper */
+  .main-slide {
+    background-color: #ddd;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+.main-slide .swiper-wrapper .swiper-slide {
+    background: no-repeat 50% / cover;
+    text-align: -99999px;
+}
+.main-slide .swiper-wrapper .box1 { background-image: url(https://placehold.co/1000x500/E6A4B4/fff/?text=pic1);}
+.main-slide .swiper-wrapper .box2 { background-image: url(https://placehold.co/1000x500/5BBCFF/fff/?text=pic2);}
+.main-slide .swiper-wrapper .box3 { background-image: url(https://placehold.co/1000x500/8B93FF/fff/?text=pic3);}
+.main-slide .swiper-wrapper .box4 { background-image: url(https://placehold.co/1000x500/FFD1E3/fff/?text=pic4);}
+.main-slide .swiper-wrapper .box5 { background-image: url(https://placehold.co/1000x500/7EA1FF/fff/?text=pic5);}
+.main-slide .swiper-wrapper .box6 { background-image: url(https://placehold.co/1000x500/97E7E1/fff/?text=pic6);}
+
+
+footer {
+    background-color: #B3C8CF;
+    text-align: center;
+    padding: 20px;
+}
+
+/* PC */
+
+@media (width >= 716px) {
+    nav {
+        background-color: #92C7CF;
+    }
+    nav .gnb {
+        position: static;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+    }
+    nav .gnb a {
+        border: none;
+    }
+}

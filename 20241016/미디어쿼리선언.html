@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>미디어쿼리 선언 방식</title>
+    <!-- 외부 선언 1
+    <link rel="stylesheet" href="./style.css"> -->
+
+    <!-- 외부 선언2 모바일 우선인 경우 작은 값을 먼저 연결
+     <link rel="stylesheet" href="./mq_m.css">
+     <link rel="stylesheet" href="./mq_t.css">
+     <link rel="stylesheet" href="./mq_pc.css">
+      -->
+
+    <!-- 외부 선언3 모바일 우선일 경우 작은 값을 먼저 연결-->
+     <link rel="stylesheet" href="./mq_m.css">
+     <link rel="stylesheet" media="(min-width:768px)" href="./tablet.css" >
+     <link rel="stylesheet" media="(width>=1200px)" href="./pc.css" >
+
+    <!-- 내부 선언 <style>
+        /* 모바일 기준 */
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            text-align: center;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        h1 {
+            background-color: #EF9C66;
+            color: #fff;
+            margin: 0;
+            /* padding : 30px */
+            padding: 1.875em;
+            transition: 0.4s;
+            font-size: 1.5rem;
+        }
+
+        h1 strong {
+            display: block;
+        }
+
+        h2 {
+            background-color: #FF8A8A;
+            color: #fff;
+            margin: 0;
+            font-size: 1.2rem;
+            /* padding : 20px */
+            padding: 1.25em;
+            transition: 0.4s;
+        }
+
+        .container {
+            font-weight: bold;
+            color: #646464;
+
+            display: grid;
+            grid-auto-rows: 20vh;
+        }
+
+        .container .box1 {
+            background-color: #F8E8EE;
+        }
+
+        .container .box2 {
+            background-color: #FDCEDF;
+        }
+
+        .container .box3 {
+            background-color: #F2BED1;
+        }
+
+        /* 768px 이상 */
+        @media screen and (min-width:768px) {
+            html {
+                font-size: 17px;
+            }
+
+            h1 {
+                background-color: #433878;
+            }
+
+            h1 strong {
+                display: inline;
+            }
+
+            h2 {
+                background-color: #7E60BF;
+            }
+            .container {
+                width: 70vw;
+                margin: 0 auto;
+            }
+            .container .box1 {background-color: #E5D9F2;}
+            .container .box2 {background-color: #CDC1FF;}
+            .container .box3 {background-color: #A594F9;}
+        }
+
+        /* 1200px 이상 */
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 18px;
+            }
+            
+            h1 {
+                background-color: #E4E4D0;
+                color: #000;
+                /* padding : 50px */
+                padding: 2.7rem;
+            }
+
+            h2 {
+                display: none;
+            }
+            .container {
+                width: 70vw;
+                margin: 0 auto;
+                grid-template-columns: repeat(3, 1fr);
+                color: #fff;
+            }
+            .container .box1 {background-color: #D7E4C0;}
+            .container .box2 {background-color: #C6DCBA;}
+            .container .box3 {background-color: #BBC3A4;}
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1>미디어쿼리<strong>선언방식</strong></h1>
+    <h2>내부선언과<br>외부선언</h2>
+    <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+
+</html>

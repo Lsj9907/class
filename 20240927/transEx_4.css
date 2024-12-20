@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+body {
+    background-image: linear-gradient(185deg, rgb(226, 244, 255) 19%, rgb(255, 255, 227) 64%);
+    /* background-attachment: fixed; */
+    height: calc(100vh - 100px);
+    font-family: "Dancing Script", cursive;
+    text-transform: capitalize;
+}
+
+.profile-wrapper {
+    background-color: #fff;
+    width: 500px;
+    margin: 100px auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    position: relative; /* 이미지의 포지션 기준으로 적용 */
+    overflow: hidden; /* 지정된 범위를 넘기면 숨김 */
+}
+.profile-wrapper .txt-box {
+    padding: 20px;
+    width: 50%;
+}
+.profile-wrapper .txt-box h2 {
+    font-size: 1.8rem;
+    font-style: italic;
+    border-bottom: 1px solid #000;
+    padding-left: 10px;
+}
+.profile-wrapper .txt-box p {
+    font-family: "Noto Sans", sans-serif;
+    line-height: 1.6;
+    margin: 20px 0 24px 10px;
+}
+.profile-wrapper .txt-box .sns-group {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 8px;
+}
+.profile-wrapper .txt-box .sns-group li:nth-child(2){
+    margin: 0 1.4rem 0 1rem;
+}
+.profile-wrapper .txt-box .sns-group a {
+    display: block;
+}
+.profile-wrapper .txt-box .sns-group a span {
+    /* color: lightpink; */
+    font-size: 2rem;
+}
+.profile-wrapper .txt-box .sns-group li:nth-child(2) a span{
+    font-size: 1.9rem;
+}
+.profile-wrapper .txt-box .sns-group a:hover {
+    color: #ffadc1;
+}
+.profile-wrapper h3 {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 4px 20px;
+}
+
+/* 이미지 박스 */
+.profile-wrapper .img-box {
+    text-indent: -9999px;
+    border: 6px solid #000;
+    background: url(./assets/AIR.png) no-repeat 50%;
+    background-size: cover;
+    border-radius: 50%;
+    width: 500px; height: 500px;
+
+    position: absolute;
+    right: -50%;
+    /*
+    top: 0; bottom: 0;
+    margin: auto 0;
+    */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s;
+}
+
+.profile-wrapper .img-box:hover{
+    right: -45%;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ifEx4</title>
+</head>
+
+<body>
+    <script>
+        const month = prompt('좋아하는 달을 입력하세요');
+        // 논리 연산자 :&& ||
+        if (month >= 3 && 5 >= month ) {
+            alert( `${month}월엔 딸기`);
+        } else if (month >= 6 && 8 >= month ) {
+            alert(`${month} 월엔 수박`);
+        } else if (month >= 9 && 11 >= month ) {
+            alert(`${month} 월엔 복숭아`);
+        } else if (month == 12 || 2 >= month ) { // 12, 1, 2
+            alert(`${month} 월엔 귤`);
+        } else {
+            alert('1~12 사이의 숫자만 넣어주세요')
+        }
+    </script>
+</body>
+</html>

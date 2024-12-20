@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@media (min-width:768px) {
+    .menu-wrapper .mobile-btn {
+        display: none;
+    }
+    .menu-wrapper .global-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* border-bottom: 3px solid rgba(255, 255, 255, 0.8); */
+        box-shadow: 0 3px rgba(255, 255, 255, 0.8);
+    }
+    .menu-wrapper .global-menu li:last-child a{
+        border-bottom: none;
+    }
+    .menu-wrapper .global-menu li:nth-child(odd) a{
+        border-right: 1px solid #fff;
+    }
+}

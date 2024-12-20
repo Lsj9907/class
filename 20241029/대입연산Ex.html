@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>대입연산자Ex</title>
+</head>
+
+<body>
+  <!--
+  <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ul>
+  -->
+
+  <script>
+    // 더하기 대입 연산자를 이용해 DOM 구축
+
+    let output = '';
+    /*
+      데이터 타입에 따른 변수 초기화
+      let str = ''; 문자열
+      let num = 0; 숫자
+      let boo = false; 논리
+      let obj = null; 객체
+      let arr = []; 배열
+    */
+    // 문자열에 더하기 대입 연산자를 사용해서 한 줄씩 작성
+    output += '<ul>';// output('') + '<ul>' -> output('<ul>');
+    output += '<li>HTML5</li>';// output('<ul>') + '<li>HTML5</li>' -> output('<ul><li>HTML5</li>');
+    output += '<li>CSS3</li>';// output('<ul><li>HTML5</li>') + '<li>CSS3</li>' -> output('<ul><li>HTML5</li><li>CSS3</li>');
+    output += '<li>JavaScript</li>';
+    output += '<li>jQuery</li>';
+    output += '</ul>';
+
+    // 도큐먼트 객체에서 바디속성을 가지고 와 html을 작성하겠다
+    document.body.innerHTML = output;
+  </script>
+</body>
+</html>

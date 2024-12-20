@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>mqEx3-1</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .wrapper {
+            list-style: none;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #CCD5AE;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .wrapper .box {
+            background-color: #fff;
+            padding: 0 5px;
+        }
+        .wrapper .none {
+            display: none;
+        }
+        @media (min-width:768px) {
+            /* 3열 */
+            .wrapper {
+                background-color: #D2E0FB;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .wrapper .box:last-child {
+                display: none;
+            }
+        }
+        @media (min-width:1024px) {
+            /* 4열 */
+            .wrapper {
+                background-color: #FFE5E5;
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .wrapper .box:last-child {
+                display: block;
+                background-color: #E48586;
+                color: #fff;
+            }
+        }
+        @media (min-width:1600px) {
+            /* 5열 */
+            .wrapper {
+                width: 90%;
+                background-color: #FFE7CE;
+                grid-template-columns: repeat(5, 1fr);
+                font-size: 1.8rem;
+                padding: 30px;
+            }
+            .wrapper .box{
+                padding: 5px 15px;
+            }
+            .wrapper .none {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="wrapper">
+        <li class="box">tx01</li>
+        <li class="box">tx02</li>
+        <li class="box">tx03</li>
+        <li class="box none">tx04</li>
+        <li class="box">tx05</li>
+        <li class="box">tx06</li>
+        <li class="box">tx07</li>
+        <li class="box">tx08</li>
+        <li class="box">tx09</li>
+        <li class="box">tx10</li>
+    </ul>
+</body>
+</html>

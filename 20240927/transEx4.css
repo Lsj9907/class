@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/**** reset ****/
+@import url(../assets/styles/reset.min.css);
+
+/**** fonts ****/
+@import url(../assets/styles/SpoqaHanSan.css);
+
+body {
+    background: rgb(255, 213, 226);
+    background: linear-gradient(185deg, rgba(255, 213, 226, 1) 35%, rgba(227, 250, 255, 1) 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    font-family: 'SpoqaHanSans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 돋움, sans-serif;
+}
+
+.wrapper {
+    margin: 50px auto;
+    width: 700px;
+    height: 278px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.contents {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    width: 215px;
+}
+.contents h1{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 400px;
+    border-bottom: 2px solid #000
+}
+.contents h2 {
+    font-size: 1.2rem;;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.contents .box img{
+    width: 25px;
+    margin-right: 20px;
+}
+.contents .box img:hover {
+    background-color: lightblue;
+}
+.wrapper h3 {
+    text-indent: -9999px;
+    color: transparent;
+    background-image: url(./assets/thumb_67848e37c9e88-aec2-4b7d-8522-9ffa755e69f1.jpg);
+    
+    background-size: cover;
+    width: 800px; height: 800px;
+    border: 6px solid #000;
+    border-radius: 100%;
+    position: absolute;
+}
+
+footer {
+    width: inherit;
+    padding: 5px 0;
+    color: #fff;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0 20px;
+}

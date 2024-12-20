@@ -1,0 +1,61 @@
+<script>
+    // 함수function2
+
+    /* 
+      function num(매개변수1, parameter2, 인자, 인수...) {
+        실행문;
+      }
+      num(인수);
+    */
+
+    // 함수 표현식(리터럴)
+    const getNum = function (num) {
+        console.log('사용자가 입력한 값으로 연산');
+        console.log(num * 0.951);
+    }
+
+    getNum();// NaN
+    getNum(1000);
+    getNum(500);
+    getNum(7200);
+
+    console.log('---------');
+    const total = function (num1, num2) {
+        console.log(`매개변수1: ${num1}, 매개변수2: ${num2}`);
+        console.log(num1 * num2);
+        console.log(num1 / num2);
+        console.log(num1 % num2);
+    }
+    // total(); undefined, undefined
+    total(10, 20);
+    total(12, 22);
+
+    console.log('---------');
+    // ES6+ 매개변수의 값이 없는 경우 기본값 설정 가능
+    const sum = function (num1, num2, num3 = 0) {
+        console.log(num1 + num2 + num3);
+    }
+    sum(100, 5);
+
+    console.log('---------');
+    const output = function num(x, y) {
+        console.log(x + y)
+    };
+    // num(10, 20); 변수에 할당된 경우 함수 이름으로 호출시 에러
+    output('즐거운', '월요일');// 선언이든, 익명이든 변수에 할당된 함수는 변수명으로 호출
+
+    let obj = 0;// 전역변수
+
+    const sum2 = function (a, b) {
+        let obj = a * b;// 지역변수
+    }
+    sum2(10, 20);
+
+    console.log(sum2(10, 20));// undefined -> 함수 호출을 했지만 함수 내에서 계산된 결과값을 받을 수 있는 return이 없음. 함수는 ()통해 들어가고 reutrn을 통해 나갈 수 있음
+
+    const sum3 = function (a, b) {
+        let obj = a * b;
+        return obj;
+    }
+    console.log(sum3(10, 20));// 200
+</script>

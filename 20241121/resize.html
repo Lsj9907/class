@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>resize</title>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>resize</h1>
+  <p>리사이즈 이벤트가 발생했을 때</p>
+
+  <script>
+  /* 
+    JS
+    addEventListener('resize', () => {});
+
+    jQuery
+    $(window).resize(function() {});
+    $(window).on('resize', function() {});
+  */
+ 
+    // window.matchMedia('(width >= 768px)');
+    const mq = matchMedia('(width >= 768px)');
+
+    if(mq.matches) {// 768보다 크면 true
+      document.body.style.backgroundColor = 'orange';
+      document.body.innerHTML += `<h2>768이상 화면</h2>`;
+    } else {// false
+      document.body.style.backgroundColor = 'maroon';
+      document.body.style.color = '#fff';
+      document.body.innerHTML += `<h2>768미만 화면</h2>`;
+    }
+
+    const view = (bg, txt) => {
+      document.body.style.backgroundColor = bg;
+      document.body.innerHTML = `<h2>768${txt} 화면</h2>`;
+    }
+
+    const resizeEx = function () {
+      console.log('리사이즈 됨');
+
+      mq.matches ? view('orange', '이상') : view('maroon', '미만');
+    };
+
+    // addEventListener('resize', resizeEx);
+    $(window).on('resize', resizeEx);
+  </script>
+</body>
+</html>

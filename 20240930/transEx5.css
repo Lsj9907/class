@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+h1 {
+    text-align: center;
+}
+.products {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    border: 3px solid #000;
+    display: flex;
+    gap: 1rem;
+    width: 80vw;
+    max-width: 1200px;
+    background-color: #EDDFE0;
+    padding: 1rem;
+}
+.products .item {
+    /*
+    flex-grow: 1;
+    flex-basis: 33.3333%;
+    */
+    width: 33.3333%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+.products .item a {
+    color: inherit;
+    text-decoration: none;
+}
+.products .item a img {
+    width: 100%;
+    vertical-align: top;
+}
+.products .item a .txt-box {
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    transition: 0.5s;
+    padding: 1rem;
+    aspect-ratio: 1 / 1;
+}
+.products .item a:hover .txt-box {
+    transform: translateY(-100%);
+}
+
+.products .item a .txt-box .desc1 {
+    /* 한줄 말 줄임 ... */
+    white-space: nowrap; /* 글자 자동 줄바꿈 금지 */
+    text-overflow: ellipsis; /* 말줄임 */
+    overflow: hidden;
+}
+.products .item a .txt-box .desc1 {
+    /* 여러 줄 말줄임 ... */
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* 여러 줄일떄 텍스트를 자르는 줄 */
+    -webkit-box-orient: vertical; /* 박스 진행 방향 */
+}

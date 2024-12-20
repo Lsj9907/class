@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aniEX3</title>
+    <style>
+        body{
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        .container {
+            padding: 150px 0;
+            width: inherit;
+        }
+        .container .item {
+            
+            position: relative;
+            animation: mov2 3s inherit alternate;
+        }
+        .container .item .bicycle {
+            position: absolute;
+            left: 90px;
+        }
+        .container .item .wheel1 {
+            position: absolute;
+            top: 400px; left: 0;
+            animation: mov1 2s infinite;
+        }
+        .container .item .wheel2 {
+            position: absolute;
+            top: 400px; left: 470px;
+            animation: mov1 2s infinite;
+        }
+        .container .fireworks {
+            position: absolute;
+            top: 0;
+            right: 0;
+            animation: firework 3s infinite alternate;
+        }
+        @keyframes firework {
+            0%{
+                transform: rotate(0deg) scale(30%);
+            }100%{
+                opacity: 0;
+                transform: rotate(360deg) scale(1);
+            }
+        }
+        @keyframes mov1 {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes mov2 {
+            0%{
+                transform: ;
+            } 100% {
+                left: 100vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="./images/bicycle.png" alt="bicycle" class="bicycle">
+            <img src="./images/wheel.png" alt="wheel1" class="wheel1">
+            <img src="./images/wheel.png" alt="wheel2" class="wheel2">
+        </div>
+        <img src="./images/fireworks.png" alt="fireworks" class="fireworks">
+    </div>
+</body>
+
+</html>

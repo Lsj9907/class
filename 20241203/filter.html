@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>filter</title>
+</head>
+
+<body>
+  <h1>.filter()</h1>
+  <p>탐색 메서드를 통해 '새로운 배열'로 반환</p>
+  <p>주로 리스트의 목록 삭제에서 많이 사용</p>
+
+  <script>
+    /* 
+      arr.filter(콜백함수[, ...]);
+      arr.filter((현재요소[,인덱스, 호출된 배열]) => {});
+
+      반환값: 새로운 배열. false인 경우 빈 배열 반환
+
+      arr.find((현재요소[,인덱스, 호출된 배열]) => {}); 탐색한 값의 첫번째만 반환. 리스트의 수정 등에서 사용
+    */
+
+    const nums = [10, '20', 20, 30, 40, 50];
+    const data = [
+      { id: 1, coffee: '아메리카노' },
+      { id: 2, coffee: '카페라떼' },
+      { id: 3, coffee: '바닐라라떼' },
+      { id: 4, coffee: '카페모카' },
+      { id: 5, coffee: '카페마끼아또' },
+      { id: 6, coffee: '카페 프라푸치노' },
+    ];
+
+    const output1 = nums.filter((num) => {
+      return num > 30;
+    });
+    console.log(typeof output1, output1);// 새로운 배열 [40, 50]
+
+    const output2 = nums.filter((num) => num > 60);
+    console.log(output2);// []
+
+    const output3 = data.filter(item => item.id === 4);
+    console.log(output3);// [{…}]
+    console.log(output3[0].coffee);
+
+    // '아메리카노'가 있는 객체를 삭제(1을 제외한 나머지 값 반환)
+    const output4 = data.filter(coffee => coffee.id !== 1);
+    console.log('결과: ', output4);// 1번 객체만 빠지고 나머지 출력
+  </script>
+</body>
+</html>

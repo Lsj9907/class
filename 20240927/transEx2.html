@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transEx2</title>
+    <style>
+        .menu-icon {
+            color: inherit;
+            text-decoration: none;
+            width: 60px;
+            height: 60px;
+            /* background-color: #FF8A8A; */
+            position: fixed;
+            top: 30px;
+            right: 30px;
+        }
+
+        .menu-icon .btn-close {
+            display: block;
+            /* font-size: 0; */
+            text-indent: -9999px;
+            position: relative;
+            height: 100%;
+        }
+
+        .menu-icon .btn-close::before,
+        .menu-icon .btn-close::after {
+            content: "";
+            background-color: #F4538A;
+            width: 13%;
+            height: 70%;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .menu-icon .btn-close::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        .menu-icon:hover .btn-close {
+            transform: rotate(360deg);
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>transEx2</h1>
+    <!-- 마우스를 위에 올리면 x가 돌아감 -->
+    <a href="#" class="menu-icon">
+        <span class="btn-close">닫기 버튼</span>
+    </a>
+</body>
+
+</html>

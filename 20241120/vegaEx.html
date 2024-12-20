@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>verasEx</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <!-- 플러그인 css -->
+    <link rel="stylesheet" href="./vegas.min.css">
+    <!-- 공통 css -->
+    <!-- 이페이지에만 적용하는 css -->
+    <style>
+        .container {
+            width: 60vw; height: 60vw;
+            border-radius: 50%;
+            border: 3px solid #222;
+            margin: 50px auto;
+            position: relative;
+        }
+        .container .btn {
+            background-color: #fff;
+            border: 3px solid #222;
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        .container .btn:hover{
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+    <!-- 제이쿼리 -->
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <!-- 다른 플러그인 js -->
+     <script src="./vegas.min.js"></script>
+    <!-- 내가 작업한 js -->
+    <!-- <script src="" defer></script> -->
+    <script>
+        $(function(){
+            $('.container').vegas({
+                slides: [
+                    { src: './images/bg1.jpg'},
+                    { src: './images/bg2.jpg'},
+                    { src: './images/bg3.jpg'},
+                    { src: './images/bg4.jpg'}
+                ],
+                overlay: './overlays/07.png',
+                timer: false,
+                delay: 1000,
+                animation: 'kenburnsUpLeft'
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#" class="btn">버튼</a>
+    </div>
+</body>
+</html>

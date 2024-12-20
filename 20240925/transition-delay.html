@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>transition-delay</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    .container {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      border: 3px solid #000;
+      width: 90vw; height: 80vh;
+      font-weight: bold;
+      font-size: 1.3rem;
+
+      display: flex;
+      /* justify-content: space-between; */
+    }
+    .container li {
+      text-align: center;
+      background: #ddd;
+      height: 2rem;
+      margin: 4px;
+      /* flex-grow: 1; */
+      width: 20%;
+
+      transition-property: all;
+      transition-duration: 1s;
+    }
+    .container:hover li:nth-child(1) {
+      background-color: #F5EFFF;
+      height: calc(100% - 8px);
+      transition-delay: 0s;
+    }
+    .container:hover li:nth-child(2) {
+      background-color: #E5D9F2;
+      height: calc(100% - 8px);
+      transition-delay: 0.5s;
+    }
+    .container:hover li:nth-child(3) {
+      background-color: #CDC1FF;
+      height: calc(100% - 8px);
+      transition-delay: 1s;
+    }
+    .container:hover li:nth-child(4) {
+      background-color: rgb(214, 184, 247);
+      height: calc(100% - 8px);
+      transition-delay: 2s;
+    }
+    .container:hover li:nth-child(5) {
+      background-color: #A594F9;
+      height: calc(100% - 8px);
+      transition-delay: 3s;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>transition-delay</h1>
+  <ul class="container">
+    <li>바로 진행</li>
+    <li>0.5초</li>
+    <li>1초</li>
+    <li>2초</li>
+    <li>3초</li>
+  </ul>
+</body>
+</html>

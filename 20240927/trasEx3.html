@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transEx3</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .global-menu {
+            display: flex;
+            background-color: #000;
+            color: #fff;
+            margin: 0 auto;
+            width: 90vw;
+            list-style: none;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .global-menu li {
+            width: 25%;
+        }
+
+        .global-menu li a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 10px 0;
+            position: relative;
+        }
+        .global-menu li a::after {
+            content: "";
+            width: 0; height: 6px;
+            background-color: red;
+            position: absolute;
+            bottom: 0; left: 0;
+            /* bottom: 50%;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%);
+            opacity: 0.5; */
+            transition: width 1s, opacity 0.5s;
+            opacity: 0;
+        }
+        .global-menu li a:hover::after {
+            content: "";
+            width: 100%;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="global-menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM객체Ex</title>
+</head>
+
+<body>
+  <div class="container">
+    <img src="" alt="img1" class="pic">
+    <img src="" alt="img2" class="pic">
+    <img src="" alt="img3" class="pic">
+    <img src="" alt="img4" class="pic">
+  </div>
+
+  <script>
+    // https://placehold.co/200
+
+    // 이미지를 배열로 만들어서 img에 적용
+    const imgs = [
+      'https://placehold.co/200/FAB12F/fff?text=img1',
+      'https://placehold.co/200/FA812F/fff?text=img2',
+      'https://placehold.co/200/FA4032/fff?text=img3',
+      'https://placehold.co/200/6A1E55/fff?text=img4',
+    ];
+
+    // .pic 탐색 후 순차적으로 이미지 삽입
+    const pics = document.querySelectorAll('.pic');
+    console.log(pics);
+    pics.forEach((pic, index) => pic.src = imgs[index]);
+  </script>
+</body>
+</html>

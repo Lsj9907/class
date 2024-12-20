@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>prependTo+appendToEx2</title>
+  <link rel="stylesheet" href="../assets/styles/reset.min.css">
+  <style>
+    .gallery {
+      width: 300px;
+      height: 200px;
+      border: 3px solid #000;
+      margin: 50px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery .btns-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: 100%; height: 100%;
+    }
+    .gallery .btns-group li {
+      background-color: rgba(0,0,0,0.7);
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      width: 30px; height: 30px;
+      cursor: pointer;
+      line-height: 26px;
+      transition: 0.2s;
+      user-select: none;
+    }
+    .gallery .btns-group li:hover {
+      background-color: rgba(0,0,0,1);
+      line-height: 22px;
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>prependTo+appendToEx2</h1>
+  <div class="gallery">
+    <ul class="btns-group">
+      <li>&lt;</li>
+      <li>&gt;</li>
+    </ul>
+    <ul class="imgs-group">
+      <li><img src="https://placehold.co/300x200/36BA98/fff?text=img1" alt="img1"></li>
+      <li><img src="https://placehold.co/300x200/E9C46A/fff?text=img2" alt="img2"></li>
+      <li><img src="https://placehold.co/300x200/F4A261/fff?text=img3" alt="img3"></li>
+      <li><img src="https://placehold.co/300x200/E76F51/fff?text=img4" alt="img4"></li>
+    </ul>
+  </div>
+
+  <script>
+    // 왼쪽, 이전 버튼
+    $('.btns-group li').first().on('click', function() {
+      // 제일 마지막에 있는 이미지가 제일 처음으로 이동
+      $('.imgs-group li:last-child').prependTo('.imgs-group');
+    });
+
+    // 오른쪽, 다음 버튼
+    $('.btns-group li').last().on('click', function() {
+      // 제일 처음에 있는 이미지가 제일 마지막으로 이동
+      $('.imgs-group li').eq(0).appendTo('.imgs-group');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>구조분해할당</title>
+</head>
+
+<body>
+    <h1>구조 분해 할당, 구조 분해, 비구조 할당</h1>
+    <p>객체나 배열을 변수로 '분해’할 수 있게 해주는 특별 문법</p>
+    <a href="https://ko.javascript.info/destructuring-assignment" target="_blank">자바스크립트 인포</a>
+
+    <script>
+        /*
+         객체:
+            const 객체명 = {키 : 값}
+         사용(읽기) :
+            객체명.키
+            객체명['키']
+        */
+        const user = {
+            id: 1,
+            name: '홍길동',
+            email: 'js@js.org',
+            addr: '수원시'
+        }
+
+        console.log(user.name, user.email);
+
+        //   구조분해할당: 속성을 각 각 분해
+        const { id, name, email, addr } = user;
+        console.log('구조분해할당:', name, addr);
+
+        const num = {
+            a: 10,
+            b: 20,
+            c: 30
+        }
+        
+        const {a,b,c} = num;
+        console.log(a, b, c)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gridEx2</title>
+    <style>
+        body{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            height: 60vh;
+            margin: 50px auto;
+            border: 6px solid #000;
+            display: grid;
+            grid-template-rows: 150px 1fr 100px;
+        }
+        .item1 {background-color: #E7CCCC;}
+        .item2 {background-color: #EDE8DC;}
+        .item3 {background-color: #C1CFA1;}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">header-고정</div>
+        <div class="item2">contents-가변</div>
+        <div class="item3">footer-고정</div>
+    </div>
+</body>
+</html>

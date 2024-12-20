@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>scrollTo+scrollBy+scrollIntoView</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+
+        .wrapper {
+            position: fixed;
+            top: 20px
+        }
+
+        #box1 {
+            position: absolute;
+            top: 600px;
+            left: 50px;
+            width: 200px;
+            height: 100px;
+            background-color: #FFDB5C;
+        }
+
+        #box2 {
+            position: fixed;
+            top: 500px;
+            left: 30px;
+            width: 300px;
+            height: 200px;
+            background-color: #FFAF61;
+        }
+
+        #box3 {
+            position: absolute;
+            top: 500px;
+            left: 400px;
+            width: 100px;
+            height: 400px;
+            background-color: #FF70AB;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>scrollTo+scrollBy+scrollIntoView</h1>
+    <div class="wrapper">
+        <button id="btn1">box1 이동</button>
+        <button id="btn2">box1 이동</button>
+        <button id="btn3">box2 이동</button>
+        <button id="btn4">box3 이동</button>
+        <button id="btn5">스크롤 이동</button>
+    </div>
+
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <script>
+        /*
+      https://ko.javascript.info/size-and-scroll-window#page-scroll
+
+      pageX; 페이지 기준
+      window.scro
+    */
+    $('#btn1').on('click', function() {
+        scrollTo(0, 300); //세로 스크롤 이동 값
+    })
+    $('#btn2').on('click', function(){
+        const box1 = $('#box1').offset().top;
+        scrollTo({
+            behavior: 'smooth',
+            top: box1
+        });
+    });
+    // #box2 fixed
+    $('#btn3').on('click', function(){
+        const box2 = $('#box2').offset().top;
+        console.log(box2);
+        scrollTo(0, box2); // 해당 박스 이동 x, 스크롤만 이동
+    });
+    // #box3
+    document.querySelector('#btn4').addEventListener('click', () => {
+        // document.querySelector('#box3').scrollIntoView(); 화면의 처음 위치에 해당 요소 보임
+        document.querySelector('#box3').scrollIntoView(false); // 화면의 마지막 위치에 해당 요소 보임
+    });
+
+    // scrollBy(0, 100); 상대값으로 현재 위치에 스크롤 이동
+    document.querySelector('#btn5').addEventListener('click', () => {
+        scrollBy({
+            behavior: 'smooth',
+            top: 100
+        });
+    });
+    </script>
+</body>
+
+</html>

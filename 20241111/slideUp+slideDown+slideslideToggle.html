@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>slideUp+slideDown+slideslideToggle</title>
+  <style>
+    .box {
+      width: 400px; height: 300px;
+      background-color: orange;
+      font-weight: bold;
+    }
+  </style>
+  <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+  <script>
+    // 문서이벤트
+    $(function() {
+      // btn1을 클릭하면 .box탐색
+      $('#btn1').on('click', () => $('.box').slideUp());// display:none
+      // btn2을 클릭하면 .box탐색
+      $('#btn2').on('click', () => {
+        $('.box').slideDown();// display
+      });
+      // btn3을 클릭하면 .box탐색
+      $('#btn3').on('click', () => {
+        $('.box').slideToggle();
+      });
+    });
+    
+  </script>
+</head>
+
+<body>
+  <h1>.slideUp() .slideDown() .slideToggle()</h1>
+  <button class="btn" id="btn1">.slideUp()</button>
+  <button class="btn" id="btn2">.slideDown()</button>
+  <button class="btn" id="btn3">.slideToggle()</button>
+
+  <div class="box">
+    <p>slideUp() 서서히 올라감</p>
+    <p>slideDown() 서서히 내려감</p>
+    <p>slideToggle() up, down</p>
+  </div>
+</body>
+</html>

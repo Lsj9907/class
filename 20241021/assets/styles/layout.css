@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/**** header ****/
+.header {
+  background-color: var(--color-white);
+  border-bottom: var(--border-btm-gray);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+
+  justify-content: space-between;
+  z-index: 999;
+}
+.header .logo a {
+  display: flex;
+  align-items: center;
+  width: 72px;
+}
+.header .header-nav a {
+  display: grid;
+  place-items: center start;
+  padding: var(--spacing-xsm);
+}
+.header .header-nav .global-menu {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background-color: var(--color-white);
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: var(--font-main-title-md);
+  padding: 0 var(--spacing-xsm);
+
+  display: none;
+}
+.header .header-nav .global-menu li {
+  border-bottom: var(--border-btm-gray);
+}
+.header .header-nav .mobile-menu span {
+  text-indent: -9999px;
+  background-color: var(--color-smooth-black);
+  width: 20px; height: 2px;
+  border-radius: 10px;
+  position: relative;
+}
+.header .header-nav .mobile-menu span::before,
+.header .header-nav .mobile-menu span::after {
+  content: "";
+  background-color: var(--color-smooth-black);
+  width: 20px; height: 2px;
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+.header .header-nav .mobile-menu span::after {
+  top: 6px;
+}
+
+/**** footer ****/
+footer {
+    background-color: var(--bg-gray-light);
+  }
+  footer .footer-info {
+    grid-auto-rows: 180px;
+    place-items: center left;
+  }
+  footer .footer-info .footer-logo {
+    background: url(../images/logo.png) no-repeat 50% / contain;
+    text-indent: -9999px;
+    width: 100px;
+  }
+  footer .footer-info .footer-info-list {
+    
+  }
+  footer .footer-info .footer-info-list h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: var(--spacing-md) 0;
+  }
+  footer .footer-info .footer-info-list .social-list {
+    gap: var(--spacing-md)
+  }
+  footer .footer-info .footer-info-list .social-list li svg {
+    height: 14px;
+    fill: var(--color-smooth-black);
+  }
+  
+  footer .footer-copyright {
+    background-color: var(--bg-gray-dark);
+    font-size: 14px;
+    text-align: center;
+    padding: 50px 0;
+  }
+  footer .footer-copyright .footer-policy {
+    justify-content: center;
+    gap: var(--spacing-xsm);
+  }
+  footer .footer-copyright .footer-policy li:first-child::after {
+    content: "";
+    width: 1px; height: 10px;
+    background-color: var(--color-smooth-black);
+    display: inline-block;
+    transform: rotate(15deg);
+    margin-left: 10px;
+  }
+
+/**** go-to-up ****/
+.go-to-up {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--color-primary) url(../images/arrow_up.svg) no-repeat 50% / 80%;
+  width: 40px; height: 40px;
+  text-indent: -9999px;
+  opacity: 0.8;
+}
+.go-to-up:hover,
+.go-to-up:active {
+  bottom: 22px;
+  background-position: 50% 100%;
+  opacity: 1;
+}
+
+
+/* 1020px 이상일 때 */
+@media (min-width:1020px) {
+  /**** header ****/
+  .header {
+    height: 80px;
+  }
+  .header .logo a {
+    width: 94px;
+  }
+  .header .header-nav .mobile-menu {
+    display: none;
+  }
+  .header .header-nav .global-menu {
+    display: flex;
+    position: static; /* flex 초기화 */
+    font-size: var(--font-main-title-sm);
+  }
+  .header .header-nav .global-menu li {
+    border-bottom: none;
+  }
+  .header .header-nav .global-menu li a {
+    height: 79px;
+  }
+  .header .header-nav .global-menu li a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  /**** footer ****/
+  footer .footer-info {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    width: 79%;
+    min-width: 1020px;
+    max-width: 1530px;
+    margin: 0 auto;
+    place-items: center;
+    padding: 70px 0;
+  }
+  footer .footer-info .footer-info-list:last-child {
+    align-self: start;
+  }
+  footer .footer-info .footer-info-list li {
+    overflow: hidden;
+  }
+  footer .footer-info .footer-info-list li svg {
+    transition: 0.3s;
+  }
+  footer .footer-info .footer-info-list li:hover a svg {
+    transform: translateY(-150%);
+  }
+}

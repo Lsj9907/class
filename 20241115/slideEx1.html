@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>slideEx1</title>
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <style>
+        .simple-slide {
+            width: 100%;
+            margin: 0 auto;
+            height: 70vh;
+            position: relative;
+        }
+        .simple-slide .slide-wrapper .slide-item {
+            text-indent: -999px;
+            width: 100%; height: 100%;
+            background: no-repeat 50%/ cover;
+            position: absolute;
+            top: 0; left: 0;
+            transition: 0.3s;
+            opacity: 0;
+        }
+        .simple-slide .slide-wrapper #bg1 {background-image: url(https://placehold.co/1000x600/B4D6CD/fff/?text=bg1);}
+        .simple-slide .slide-wrapper #bg2 {background-image: url(https://placehold.co/1000x600/FFDA76/fff/?text=bg2);}
+        .simple-slide .slide-wrapper #bg3 {background-image: url(https://placehold.co/1000x600/FF8C9E/fff/?text=bg3);}
+        .simple-slide .slide-wrapper #bg4 {background-image: url(https://placehold.co/1000x600/FF4E88/fff/?text=bg4);}
+        .simple-slide .slide-wrapper .slide-item.active{
+            opacity: 1;
+        }
+        .simple-slide .slide-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .simple-slide .slide-button li {
+            cursor: pointer;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 5px 10px;
+        }
+        .simple-slide .slide-button li:hover{
+            background-color: rgba(0, 0, 0, 1);
+            line-height: 1.1;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="simple-slide">
+        <ul class="slide-wrapper">
+            <li class="slide-item active" id="bg1">bg1</li>
+            <li class="slide-item" id="bg2">bg2</li>
+            <li class="slide-item" id="bg3">bg3</li>
+            <li class="slide-item" id="bg4">bg4</li>
+        </ul>
+        <ul class="slide-button">
+            <li id="prevBtn">&lt;</li>
+            <li id="nextBtn">&gt;</li>
+        </ul>
+    </div>
+    <script>
+        // setINterval(콜백함수, 3000);
+        const slideItems = $('.slide-wrapper .slide-item').length;
+        let idx = 0;
+        let autoSlide;
+        
+        function showSlide(index) {
+        $('.slide-wrapper .slide-item').removeClass('active').eq(index).addClass('active');
+        }
+
+        function nextSlide(){
+            idx = (idx +1) % slideItems; // 0,1,2,3,0,1...
+            showSlide(idx);
+        }
+        function prevSlide(){
+            idx = (idx - 1 + slideItems) % slideItems;
+            showSlide(idx);
+        }
+
+        $('#nextBtn').on('click', function(){
+            nextSlide(); //호출하면, 내부에 있는 showSlide 함수 호출
+            resetSlide();
+        });
+        $('#prevBtn').on('click', function(){
+            prevSlide();
+            resetSlide();
+        });
+
+        function resetSlide(){
+            clearInterval(autoSlide);
+            startSlide();
+        }
+        function startSlide() {
+            // 선언만 한 autoSlide에 재할당
+            autoSlide = setInterval(nextSlide, 3000);
+        }
+
+        startSlide()
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>attrEx2</title>
+    <style>
+        .gallery {
+            width: 80vw;
+            margin: 50px auto;
+            border: 3px solid #000;
+        }
+
+        .gallery img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .btn-wrapper {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .btn-wrapper li {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .btn-wrapper li:hover {
+            opacity: 1;
+        }
+    </style>
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function () {
+            /* 첫번째 이미지를 클릭하면, 첫번째 이미지로 메인 이미지 변경 
+            $('.btn-wrapper li').eq(0).on('click', function(){
+                 $('.gallery .main-img img').attr({src: './images/bg1.jpg', alt: 'bg1'});
+             });
+             $('.btn-wrapper li').eq(1).on('click', function(){
+                 $('.gallery .main-img img').attr({src: './images/bg2.jpg', alt: 'bg2'});
+             });
+             */
+
+            $('.btn-wrapper li').on('click', function () {
+                const imgSrc = $(this).find('img').attr('src');
+                const imgAlt = $(this).children().attr('alt');
+                console.log(imgSrc, imgAlt);
+                $('.gallery .main-img img').attr({ src: imgSrc, alt: imgAlt })
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="gallery">
+        <div class="main-img">
+            <img src="./images/bg1.jpg" alt="bg1">
+        </div>
+    </div>
+    <ul class="btn-wrapper">
+        <li><img src="./images/bg1.jpg" alt="bg1"></li>
+        <li><img src="./images/bg2.jpg" alt="bg2"></li>
+        <li><img src="./images/bg3.jpg" alt="bg3"></li>
+        <li><img src="./images/bg4.jpg" alt="bg4"></li>
+    </ul>
+</body>
+
+</html>

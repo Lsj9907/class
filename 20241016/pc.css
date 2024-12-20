@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+html {
+    font-size: 18px;
+}
+
+h1 {
+    background-color: #E4E4D0;
+    color: #000;
+    /* padding : 50px */
+    padding: 2.7rem;
+}
+
+h2 {
+    display: none;
+}
+.container {
+    width: 70vw;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    color: #fff;
+}
+.container .box1 {background-color: #D7E4C0;}
+.container .box2 {background-color: #C6DCBA;}
+.container .box3 {background-color: #BBC3A4;}

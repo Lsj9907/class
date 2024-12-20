@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>animateEx3</title>
+    <link rel="stylesheet" href="../assets/styles/reset.min.css">
+    <style>
+        /* html, body {height: 100%;} */
+        .wrapper {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            left: -200px;
+        }
+        .wrapper .side-menu {
+            background-color: #C5D3E8;
+            width: 200px;
+            height: 100%;
+            font-weight: bold;
+            font-size: 1.3rem;
+            line-height: 2;
+            text-align: center;
+            padding: 120px 0;
+            text-transform: capitalize;
+        }
+        .wrapper .btn {
+            background-color: #C5D3E8;
+            width: 50px;
+            height: 140px;
+            position: absolute;
+            top: 10px; left: 200px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            text-orientation: upright;
+            writing-mode: vertical-lr;
+        }
+        .wrapper .btn span {
+            font-weight: bold;
+            /* transform: rotate(90deg); */
+        }
+    </style>
+    
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <nav class="wrapper">
+        <ul class="side-menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+
+        <div class="btn" id="close"><span>close</span></div>
+        <div class="btn" id="open"><span>open</span></div>
+    </nav>
+
+    <script>
+         /*
+        $('#open').on('click', function() {
+            $('.wrapper').animate({left: 0});
+            $('#open').hide();
+        });
+        $('#close').on('click', function() {
+            $('.wrapper').animate({left: -200});
+            $('#open').show();
+        });
+        */
+       $('#open, #close').on('click', function(){
+        $('.wrapper').animate({
+            left: $('.wrapper').css('left') === '0px' ? '-200px' : '0px'})
+            $('#open').toggle();
+       });
+      
+    </script>
+</body>
+
+</html>

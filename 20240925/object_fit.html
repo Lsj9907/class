@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>object-fit</title>
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        /*
+         p:nth-child(n+3):nth-child(-n+7)
+         :not(p:first-of-type)
+        */
+        p:first-of-type ~p {
+            border: 6px solid #000;
+            width: 400px; height: 400px;
+        }
+        .cat1 {object-fit: fill;} /* 기본값. 비율 상관없이 가득 채움 */
+        .cat2 {object-fit: contain;} /* 비율 유지. 원본이 전부 보여짐. 대신 일부 여백이 생길 수 있음 */
+        .cat3 {
+            object-fit: cover; /* 비율유지. 원본이 부모 영역 일부 가려지는 부분이 있을 수 있음 */
+            
+            object-position: 50% 50%;
+            object-position: center;
+            object-position: 100px 50px;
+            object-position: 100% 50%;
+            object-position: 20%; /* 20% 50% */
+        } 
+        .cat4 {object-fit: none;} /* 원본 사이즈. 크기 조절 x */
+        .cat5 {object-fit: scale-down;} /* none과 contain 중 이미지 크기가 더 작아지는 값 선택 */
+    </style>
+</head>
+
+<body>
+    <h1>object-fit</h1>
+    <p>이미지&lt;img&gt;나 비디오 &lt;video&gt;의 비율 조절</p>
+    <p><img src="./images/cat.png" alt="cat" class="cat1"></p>
+    <p><img src="./images/cat.png" alt="cat" class="cat2"></p>
+    <p><img src="./images/cat.png" alt="cat" class="cat3"></p>
+    <p><img src="./images/cat.png" alt="cat" class="cat4"></p>
+    <p><img src="./images/cat.png" alt="cat" class="cat5"></p>
+</body>
+</html>

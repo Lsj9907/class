@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aniEx1</title>
+    <style>
+        body {
+            height: 80vh;
+            background: linear-gradient(-45deg, #ffa2a2, #8ed2ff, #ff71f8, #fffd6b);
+            background-size: 400% 400%;
+            animation-name: mov1;
+            animation-duration: 15s;
+            animation-delay: 3s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+        }
+
+        .btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid #fff;
+            display: flex;
+            width: 150px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            margin: 150px auto;
+            transition: 1s;
+        }  
+        .btn:hover {
+            border-radius: 30px;
+        }
+        @keyframes mov1 {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="btn">aniEX1</a>
+</body>
+
+</html>
